@@ -5,6 +5,263 @@ html
   body
     include layout/__header
     section.content
-      | тут будет контент
+      section.banner
+        .banner__car.swiper-container.js-banner
+          .swiper-wrapper
+            .swiper-slide
+              img(src="img/banner1.jpg").banner__img
+              aside.banner__content
+                h3(data-height="156").banner__title.js-shave Итальянские грейферы Rozzi
+                p(data-height="130").banner__text.js-shave Поставляем высококачественные грейферы от завода-производителя на выгодных условиях для любых нужд промышленности и любых видов техники по всей территории России и странам СНГ.
+            .swiper-slide
+              img(src="img/banner1.jpg").banner__img
+              aside.banner__content
+                h3(data-height="156").banner__title.js-shave Короткое название
+                p(data-height="130").banner__text.js-shave И очень короткий текст, чтобы проверить размерность
+            .swiper-slide
+              img(src="img/banner1.jpg").banner__img
+              aside.banner__content
+                h3(data-height="156").banner__title.js-shave Итальянские грейферы Rozzi c очень длинным названием, чтобы проверить обрезку
+                p(data-height="130").banner__text.js-shave Поставляем высококачественные грейферы от завода-производителя на выгодных условиях для любых нужд промышленности и любых видов техники по всей территории России и странам СНГ. Поставляем высококачественные грейферы от завода-производителя на выгодных условиях для любых нужд промышленности и любых видов техники по всей территории России и странам СНГ.
+          .swiper-buttons
+            .swiper-button-prev.swiper-button-prev_dark
+            .swiper-button-next.swiper-button-next_dark
+        button(type="button", data-fancybox, data-src="#feedback").btn.btn_red.banner__btn Связаться с нами
+      section.special
+        aside.special__count За время работы компания Rozzi S.p.A. изготовила более 50000 различных грейферных захватов.
+        h3.special__title Грейферы Rozzi созданы специально для вас!
+        p.special__subtitle Компания, принадлежащая семье Роцци, была основана в 1970г. В настоящее время компания Rozzi S.p.A. является лидером в производстве гидравлического и электрогидравлического оборудования для подъемно-транспортной техники известных мировых брендов. На сегодня оборот компании составляет 10-15 млн. евро в год.
+        .special__bottom
+          .special__links
+            .special__link
+              p.special__link-type PDF, 1.2 Мб
+              a(href="#").special__link-href Гидравлические грейферы ROZZI
+            .special__link
+              p.special__link-type PDF, 962 Кб
+              a(href="#").special__link-href Электрогидравлические грейферы ROZZI
+          .special__car.swiper-container.js-special
+            .swiper-wrapper
+              .swiper-slide
+                img(src="img/spec1.png").special__img
+                span(data-text="Форма лепестков сконструирована таким образом, чтобы захватывать, как можно больше материала, при этом обеспечивая надежность захвата.", style="top: 303px; left: 53px").special__hint +
+                span(data-text="Какой-то другой супер-текст, чтобы показать, что это вообще возможно, а не какие-то выдумки, йолы-палы", style="top: 153px; left: 283px").special__hint +
+              .swiper-slide
+                img(src="img/spec1.png").special__img
+                span(data-text="Форма лепестков сконструирована таким образом, чтобы захватывать, как можно больше материала, при этом обеспечивая надежность захвата.", style="top: 303px; left: 53px").special__hint +
+            .swiper-buttons
+              .swiper-button-prev
+              .swiper-button-next
+      section.features
+        .features__content
+          h3.features__title Преимущества грейферов Rozzi
+          ol.features__list
+            li(data-number="1").features__item Высокое европейское качество
+            li(data-number="4").features__item Использование инновационных решений и специальных материалов
+            li(data-number="2").features__item Долгий срок эксплуатации
+            li(data-number="5").features__item Легкость в управлении, эффективность и безопасность
+            li(data-number="3").features__item Низкие эксплуатационные расходы
+            li(data-number="6").features__item Подходят для любых моделей спецтехники
+        aside.features__imgs
+          .features__img.features__img_img1.js-scroll-imgover
+          .features__img.features__img_img2.js-scroll-imgover
+      section.video(style="background-image: url('img/video.jpg')")
+        button(type="button", data-fancybox, data-src="https://www.youtube.com/watch?v=_sI_Ps7JSEk").video__play
+      section.catalog
+        span.catalog__smalltitle Каталог
+        h3.catalog__title В ассортименте более 400 моделей грейферов под любые нужды
+        ul(style="background-image: url('img/cat1.jpg')").catalog__list.js-catalog-list
+          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.catalog__item_wide.js-catalog-elem
+            p.catalog__item-name Полип-грейферы для погрузки металлолома и различных материалов
+          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name Грейферы для разрушения и сортировки
+          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name Грейферы для круглого леса и других материалов
+          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name Двухчелюстной грейфер для сыпучих материалов
+          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name Вилочные захваты для сельского хозяйства
+          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name Гидравлические ротаторы
+          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name Электрогидравлические грейферы
+      section.catalog__official
+        .catalog__official-content
+          h3.catalog__official-title Официальные каталоги Rozzi
+          p.catalog__official-subtitle Каталоги доступны для скачивания в формате PDF.
+        aside.catalog__official-files
+          .catalog__official-file
+            p.catalog__official-file-info PDF, 1.2 Мб
+            a(href="#").catalog__official-file-href Гидравлические грейферы ROZZI
+          .catalog__official-file
+            p.catalog__official-file-info PDF, 962 Кб
+            a(href="#").catalog__official-file-href Электрогидравлические грейферы ROZZI
+      section.gallery
+        aside.gallery__side.js-gallery-sticky
+          .gallery__side-sticky
+            span.gallery__smalltitle Галерея
+            h3.gallery__title Грейферы Rozzi в действии
+            ul.gallery__catlist
+              li.gallery__catitem
+                a(href="#", data-tab="1").gallery__catitem-href Металлургия (Многочелюстные грейферы)
+              li.gallery__catitem
+                a(href="#", data-tab="2").gallery__catitem-href Порты и терминалы (Двухчелюстные грейферы)
+              li.gallery__catitem
+                a(href="#", data-tab="3").gallery__catitem-href Лесозаготовка (Грейферы для бревен)
+              li.gallery__catitem
+                a(href="#", data-tab="4").gallery__catitem-href Для демонтажа и разбора завалов
+              li.gallery__catitem
+                a(href="#", data-tab="5").gallery__catitem-href Сельское хозяйство (Вилочные грейферы)
+              li.gallery__catitem
+                a(href="#", data-tab="6").gallery__catitem-href Для манипуляторов и КМУ
+              li.gallery__catitem
+                a(href="#", data-tab="7").gallery__catitem-href Электрогидравлические грейферы
+        .gallery__photos
+          .gallery__photos-tab(data-tab="1")
+          .gallery__photo-col
+            .gallery__photo-elem
+              img(src="img/gallery1.jpg")
+            .gallery__photo-elem
+              img(src="img/gallery2.jpg")
+          .gallery__photo-col.gallery__photo-col_wide
+            .gallery__photo-elem
+              img(src="img/gallery3.jpg")
+            .gallery__photo-elem
+              img(src="img/gallery4.jpg")
+      section.help
+        h3.help__title Поможем с выбором
+        p.help__subtitle Оставьте заявку, мы свяжемся с Вами в ближайшее время. Для наиболее правильного подбора необходимого грузозахватного оборудования просим ответить на вопросы *
+        form.help__form
+          .common__col
+            .common__row
+              label.common__label Состав заявки
+              textarea.common__textarea
+            .common__row
+              p.help__hint * – Укажите модель подходящего грейфера, или, если вы еще не определились, по возможности напишите: тип грейфера (двухчелюстной – с зубом/без, или многочелюстной – тип лепестка:  S, SL, P, PA), перегружаемый материал  (удельный вес),  для какой модели техники, максимально допустимый вес грейфера с грузом, для электрогидравлических  укажите грузоподъемность крана.
+          .common__col
+            .common__row
+              .common__col
+                label.common__label Ваше имя*
+                input(type="text", data-req="req").common__inp
+              .common__col
+                label.common__label Телефон*
+                input(type="text", data-req="req").common__inp.js-phone
+            .common__row
+              label.common__label Электронная почта
+              input(type="text", data-req="req", data-type="email").common__inp
+            .common__row
+              .common__col
+                .common__fileover
+                  input(type="file", name="", data-req="req", data-type="file").common__file#file1.js-common-fileinput
+                  label(for="file1", data-default="Прикрепить файл").common__filename.js-common-file Прикрепить файл
+                  button(type="button").common__filedelete.js-common-filedelete
+              .common__col
+                .fakecheckbox
+                  input(type="checkbox", value="", name="agreement", checked)#agreement.fakecheckbox__truecheck
+                  label(for="agreement").fakecheckbox__label Даю согласие на обработку 
+                    a(href="#") персональных данных
+          button(type="submit").btn.btn_red.help__btn Отправить
+      section.about
+        aside.about__side
+          span.about__smalltitle О компании
+          h3.about__title «Евраз-Трейд» – официальный поставщик грейферов Rozzi в России и СНГ
+          .about__text
+            p С нами выгодно!
+            p Наша компания более 17 лет успешно поставляет импортное оборудование различных брендов, узлы, агрегаты, запчасти, расходные материалы к различным видам импортной спецтехнике и для различного технологического оборудования.
+            p Являемся официальными представителями производителя грейферных захватов  Rozzi S.p.A., а так же производителя индустриальных шин Trelleborg. Поставляем по прямым контрактам оригинальные запасные части к спецтехнике SENNEBOGEN, LIEBHERR.
+        .about__info
+          span.about__info-img.js-scroll-imgover
+          ul.about__features
+            li.about__feature
+              span.about__digit 17
+              p.about__digit-for лет на рынке
+            li.about__feature
+              span.about__digit 97
+              p.about__digit-for выиграных тендеров
+            li.about__feature
+              span.about__digit 53
+              p.about__digit-for постоянных клиента
+            li.about__feature
+              span.about__digit 50
+              p.about__digit-for поставленных грейферных захватов за 5 лет
+      section.capabilities
+        span.capabilities-img.js-scroll-imgover
+        aside.capabilities-info
+          p.capabilities__title Наши возможности
+          ol.capabilities__list
+            li.capabilities__item
+              p.capabilities__item-title Подбор грейферов под ваши задачи
+              p.capabilities__item-text Сообщите нам модель техники, тип перегружаемого материала, ограничения по ширине и высоте и наши менеджеры подберут грейфер эффективно решающий ваши индивидуальные задачи.
+            li.capabilities__item
+              p.capabilities__item-title Изготовление по вашим индивидуальным требованиям
+              p.capabilities__item-text При заказе оборудования мы можем учесть Ваши пожелания и внести конструктивные изменения по выбору стали, размерам, дополнительным усилениям, опциям.
+            li.capabilities__item
+              p.capabilities__item-title Персональные условия поставок
+              p.capabilities__item-text Сотрудничаем с нашими клиентами на индивидуальных условиях и можем предложить отсрочку платежа, персональные условия доставки или выгодные условия лизинга.
+      section.ourfeat
+        p.ourfeat__title Наши преимущества
+        ul.ourfeat__list
+          li.ourfeat__item
+            p.ourfeat__item-title Прямые поставки от производителя
+            p.ourfeat__item-text Осуществляем прямые поставки с завода-изготовителя в Италии, индивидуально прорабатывая маршрут и транспортную логистику под каждую новую перевозку, что позволяет найти наиболее надежные и менее затратные варианты.
+          li.ourfeat__item
+            p.ourfeat__item-title Таможенное сопровождение сделки
+            p.ourfeat__item-text Полностью берем на себя все мероприятия по оформлению импортной продукции и подаче таможенных деклараций на таможенные посты Челябинска, либо на таможенные посты по месту нахождения заказчика, что позволяет полностью контролировать правильность расчета и уплаты всех необходимых таможенных платежей и пошлин.
+          li.ourfeat__item
+            p.ourfeat__item-title Доставка по всей территории РФ и&nbsp;странам СНГ
+            p.ourfeat__item-text Доставка товара до заказчика осуществляется, любым удобным для него способом по договоренности, в пределах нашего региона мы бесплатно доставим груз на любой склад транспортной компании для дальнейшей межтерминальной перевозки или доставим груз до «дверей» в Вашем городе за умеренную плату.
+      section.clients
+        p.clients__title Наши клиенты
+        .clients__car.swiper-container.js-clients
+          .swiper-wrapper
+            .swiper-slide
+              img(src="img/clients1.png").clients__img
+            .swiper-slide
+              img(src="img/clients2.png").clients__img
+            .swiper-slide
+              img(src="img/clients3.png").clients__img
+            .swiper-slide
+              img(src="img/clients4.png").clients__img
+            .swiper-slide
+              img(src="img/clients5.png").clients__img
+            .swiper-slide
+              img(src="img/clients6.png").clients__img
+          .swiper-button-prev
+          .swiper-button-next
+      section.contacts
+        .common__col
+          p.contacts__title Контакты
+          .contacts-type
+            p.contacts__type-title Адрес
+            p.contacts__type-text 454007, город Челябинск, улица Савина, дом 8а, офис 2
+          .contacts-type
+            p.contacts__type-title Телефоны
+            .contacts__type-phones
+              a(href="tel:+73512430425").contacts__type-phone +7 (351) 243-04-25
+              a(href="tel:+73512432112").contacts__type-phone +7 (351) 243-21-12
+          .contacts-type
+            p.contacts__type-title Электронная почта
+            a(href="mailto:et74@bk.ru").contacts__type-mail et74@bk.ru
+        .common__col
+          p.contacts__title Связаться с нами
+          form.contacts__form
+            .common__row
+              label.common__label Текст сообщения
+              textarea.common__textarea
+            .common__row
+              .common__col
+                label.common__label Ваше имя*
+                input(type="text", data-req="req").common__inp
+              .common__col
+                label.common__label Телефон*
+                input(type="text", data-req="req").common__inp.js-phone
+            .common__row
+              label.common__label Электронная почта
+              input(type="text", data-req="req", data-type="email").common__inp
+            .common__row
+              .fakecheckbox
+                input(type="checkbox", value="", name="agreement", checked)#agreement1.fakecheckbox__truecheck
+                label(for="agreement1").fakecheckbox__label Даю согласие на обработку 
+                  a(href="#") персональных данных
+            button(type="submit").btn.btn_red.help__btn Отправить  
     include layout/__footer
     include layout/__scripts

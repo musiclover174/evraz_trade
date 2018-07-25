@@ -160,29 +160,28 @@
 .swiper-button-next 
   position: absolute;
   top: 50%;
-  width: 27px;
+  width: 35px;
   height: 27px;
-  margin-top: -23px;
+  margin-top: -13px;
   z-index: 10;
   cursor: pointer;
   border-radius 50%
   bgc transparent
   outline none
-  background-repeat no-repeat
-  background-position: 0 -756px
-  transition .5s background
+  transition .7s opacity
   @media $desktopMax
     top 0
     mt 0
 
-.swiper-buttons
-  @media $desktopMax
-    pos absolute
-    b 30px
-    l 30px
-    w 100px
-    h 27px
-
+.swiper-buttons .swiper-button-prev,
+.swiper-buttons .swiper-button-next
+    position static
+    mt 0
+    ib()
+    
+.swiper-buttons .swiper-button-next
+  ml 28px
+    
 .swiper-button-prev_dark,
 .swiper-button-next_dark{
   filter: invert(100%)
@@ -194,7 +193,7 @@
 }
 .swiper-button-prev:hover,
 .swiper-button-next:hover{
-  animation arrAnimation 1s steps(28)
+  opacity .5
 }
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
@@ -203,13 +202,13 @@
   pointer-events: none;
 }
 .swiper-button-prev
-  background-image: url('../i/arleft_white.png')
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAbCAMAAADBLsarAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAmVBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9IsPYvAAAAMnRSTlMAS6dX5jRj4ytw3iN+1xwBi84WApfGEASkvQwHsLIIC7umBcWZA4y+GtaBFM2OxxGJfSoLHdIAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAiklEQVQoz43TyRKCQAxF0aDggEALCiqO4Kwowv9/HLhjQ9289amudAaRbqyBUIa2Q2Q0nhCZujMinh+AMPMwArJYxgmQ1XqTAtnu9gcgx1OWA0nOlyuQKLwZIIHvCeVeY+TxfOE78i4+VI/qX6r+qPqsmtd/7t8Skfnh/rSpcA9Ftc+qu1DdV9+dNjT0DnrGmeVEAAAAAElFTkSuQmCC") no-repeat center;
   l 20px
   @media $desktopMax
     l 0
 
 .swiper-button-next
-  background-image: url('../i/arright_white.png')
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAbCAMAAADBLsarAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAqFBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VRVRbAAAAN3RSTlMAqEs05lcr42Mj3nAc134Wz4sBEceXAgy9pAQIsrAHBaa7CwOZxRCMzoAbgdYaj80UmsQPF9CJC2y6PQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAACISURBVCjPY2DAAhiZGAgCZhZWworY2DkIK+Lk4iasiIeXj7AifgFBIYKKhEVExQgqEpeQlCKoSFpGVo6gInkFRSWCipRVVNUIKhJS1+AnHAaavFoM5gSBBEFztHV0CblHT9+AkL8MjYwpDx8iwpmI+CIi3k1MzQilHyLSIRHpmYh8QUz+QsunAN/DD7paMn9GAAAAAElFTkSuQmCC") no-repeat center;
   r 20px
   @media $desktopMax
     r 0

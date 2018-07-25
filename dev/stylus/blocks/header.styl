@@ -1,0 +1,411 @@
+.header
+  pos absolute
+  w 100%
+  t 0
+  l 0
+  padding 22px 65px 0
+  z-index 1
+  &:before
+    content ""
+    pos absolute
+    t 0
+    l 0
+    z-index -1
+    size 524px 281px
+    bgc $orange
+    background-image url('../i/btn-bg.png')
+    background-repeat no-repeat
+    background-blend-mode soft-light
+    background-position top left
+  &__feedback
+    float right
+    mr -65px
+  &__info
+    float right
+    mr 29px
+    mt 22px
+    text-align right
+    &-phone
+      color black
+      fontify 21px 600 24px
+    &-days
+      db()
+      mt 10px
+      color black
+      fontify 12px 600 18px
+  &__logo
+    ib()
+    mt 29px
+    mr 30px
+    &-hint
+      ib()
+      mt 38px
+      color white
+      fontify 15px 600 21px
+      max-width 240px
+  &__menu
+    float right
+    mr 55px
+    mt 54px
+    &-list
+      display flex
+    &-item
+      & + &
+        ml 27px
+    &-href
+      color black
+      fontify 17px 700 20px
+      pos relative
+      transition .7s color
+      &:after
+        content ""
+        pos absolute
+        bgc $orange
+        w 0
+        h 2px
+        b -2px
+        l 50%
+        transform translateX(-50%)
+        transition .7s width
+      &.active
+        color $yellow
+      &:not(.active):hover:after
+        w 100%
+
+.burger
+  &__bg
+    pos absolute
+    l  50%
+    t 50%
+    transform translate(-50%, -50%) scale(1.06)
+    transition 1s transform
+    will-change transform
+    opacity .5
+    @media $desktopMin
+      dn()
+  &__button
+    cursor pointer
+    w 25px
+    h 25px
+    pos relative
+    &:before
+      content ""
+      pos absolute
+      t 0
+      r 0
+      w 25px
+      h 1px
+      transition .5s width, .5s background, .5s transform, .5s top
+    &:after
+      content ""
+      pos absolute
+      b 0
+      r 0
+      w 25px
+      h 1px
+      transition .5s width, .5s background, .5s transform, .5s top  
+    &-meat
+      content ""
+      pos absolute
+      t 50%
+      r 0
+      w 25px
+      h 1px
+      mt -1px
+      transition .5s width, .5s background, .5s transform, .5s top  
+    &:not(.open):hover
+      &:before
+        animation burger-hover 1s infinite ease-in-out alternate
+      &:after
+        animation burger-hover 1s infinite ease-in-out alternate forwards 400ms
+    &:not(.open):hover &-meat
+      animation burger-hover 1s infinite ease-in-out alternate forwards 200ms
+    &.open
+      &:before
+        animation burger-top 1s ease-in-out forwards
+      &:after
+        animation burger-bottom 1s ease-in-out forwards
+      & ^[-1]-meat
+        opacity 0
+    &.open.remove
+      &:before
+        animation burger-top-invert 1s ease-in-out forwards
+      &:after
+        animation burger-bottom-invert 1s ease-in-out forwards
+      & ^[-1]-meat
+        opacity 1
+        transition .4s opacity .6s
+  &__popup
+    visibility hidden
+    opacity 0
+    pos fixed
+    t 0 
+    l 0
+    w 100vw
+    h 100vh
+    z-index 9
+    background $dark
+    display flex
+    align-items center
+    justify-content flex-start
+    transition .7s visibility, .7s opacity
+    @media $LandscapeMedium
+      align-items flex-start
+      overflow auto
+    @media $desktopMin
+      background url('../i/burger-bg.png') no-repeat center $dark
+      background-size cover
+  &__menu
+    &-inner
+      max-width 1226px
+      w 100%
+      margin 0 auto
+      display flex
+      justify-content space-between
+      align-items stretch
+      @media $desktopMax
+        max-width 100%
+        padding 0 30px
+      @media $LandscapeMedium
+        padding 0 20px
+      @media $LandscapeMedium
+        flex-direction column
+    &-col
+      w calc(50% - 21px)
+      display flex
+      flex-direction column
+      justify-content space-between
+      align-content space-between
+      @media $LandscapeMedium
+        w 100%
+    &-list
+      display flex
+      flex-direction column
+      pos relative
+      opacity 0
+      b -20px
+      transition .7s bottom, .7s opacity
+    &-item
+      & + &
+        mt 59px
+        @media $lDesktopMedium
+          mt 44px
+        @media $LandscapeMedium
+          mt 10px
+      &_mobile
+        @media (min-width:651px)
+          dn()
+          & + .burger__menu-item
+            mt 0
+    &-href
+      color white
+      fontify 72px 400 48px
+      pos relative
+      l 0
+      transition .7s color, .7s left
+      @media $lDesktopMax
+        fontify 66px 400 48px
+      @media $lDesktopMedium
+        fontify 60px 400 48px
+      @media $LandscapeMedium
+        fontify 36px 400 48px
+      &:after
+        content ""
+        pos absolute
+        bgc alpha(white, .25)
+        w 0
+        h 3px
+        b 4px
+        l 50%
+        transform translateX(-50%)
+        transition .7s width
+      &.active
+        color $yellow
+      &:hover
+        l 15px
+  &__phones
+    mt -6px
+    overflow hidden
+    pos relative
+    opacity 0
+    b -20px
+    transition .7s bottom, .7s opacity
+    @media $desktopMin
+      mt 0
+    @media $LandscapeMedium
+      mt 35px
+    &-elem
+      ib()
+      color white
+      fontify 42px 400 40px
+      float left
+      clear both
+      @media $lDesktopMax
+        fontify 38px 400 40px
+      @media $lDesktopMedium
+        fontify 36px 400 40px
+      @media $desktopMin
+        fontify 30px 400 40px
+      @media $LandscapeMedium
+        fontify 23px 400 23px
+      & ~ &
+        mt 40px
+        @media $desktopMin
+          mt 20px
+  &__socials
+    pl 102px
+    pos relative
+    color white
+    fontify 16px 400 23px
+    max-width 334px
+    opacity 0
+    b -20px
+    transition .7s bottom, .7s opacity
+    @media $lDesktopMedium
+      fontify 14px 400 21px
+    @media $LandscapeMedium
+      pl 0
+      mt 35px
+    &:before
+      content ""
+      pos absolute
+      l 6px
+      t 11px
+      w 70px
+      h 1px
+      bgc white
+      transition .7s width
+      @media $LandscapeMedium
+        dn()
+    &-elem
+      color white
+      fontify 16px 400 23px
+      white-space nowrap
+      pos relative
+      @media $lDesktopMedium
+        fontify 14px 400 21px
+      &:after
+        content ""
+        pos absolute
+        bgc alpha(white, .25)
+        h 1px
+        b 0
+        r 0
+        transition .7s background, .7s bottom
+      &:hover:after
+        bgc transparent
+        b -2px
+      &:hover
+        border-color transparent
+      &:before
+        content ""
+        ib()
+        mr 7px
+      &[data-type="inst"]:before
+        size 12px
+        mt 6px
+        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEX///////////////////////////////////////////////////////////////////////////////////81m6ZbAAAAFHRSTlMAA37ree2Qg4+O+W4SEedvdoHhd8PbWNMAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAU0lEQVQI122N0Q6AIAhFLxqZolnG/39rkrXW1n3hHMa4IOf1ip8IbqDyzAH3XhdERp9JcpE1sppU9GwdTLJJ/pPPWZJSJJk8r60K+ysB5NrAdtAJRDMH441ZvLkAAAAASUVORK5CYII=") no-repeat center
+      &[data-type="inst"]:after
+        l 19px
+      &[data-type="fb"]:before
+        size 7px 13px
+        mt 5px
+        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAANBAMAAACX52mGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAHlBMVEX///////////////////////////////////////8V2MxSAAAACXRSTlMAEardd2bumbuE/Rs4AAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAACxJREFUCNdjYBCaOYGBQRNEzDQJABIKDAxKM5MKGGbOnGkAIhogYliJtAIGAA1bDqr8bfauAAAAAElFTkSuQmCC") no-repeat center
+      &[data-type="fb"]:after
+        l 14px
+
+@keyframes burger-hover
+  0%
+    w 100%
+  50%
+    w 50%
+  100%
+    w 100%
+      
+@keyframes burger-top
+  0%
+    t 0
+  40%
+    t 12px
+  60%
+    t 12px
+    transform rotate(0)
+  100%
+    t 12px
+    transform rotate(45deg)
+    
+@keyframes burger-bottom
+  0%
+    b 0
+  40%
+    b 12px
+  60%
+    b 12px
+    transform rotate(0)
+  100%
+    b 12px
+    transform rotate(-45deg)
+
+@keyframes burger-top-invert
+  0%
+    t 12px
+    transform rotate(45deg)
+  40%
+    t 12px
+    transform rotate(0)
+  60%
+    t 12px
+  100%
+    t 0
+    
+@keyframes burger-bottom-invert
+  0%
+    b 12px
+    transform rotate(-45deg)
+  40%
+    b 12px
+    transform rotate(0)
+  60%
+    b 12px
+  100%
+    b 0
+    
+html.burgeropen
+  .burger
+    &__button
+      &:before,
+      &:after,
+      &-meat
+        background-color white !important
+    &__popup
+      visibility visible
+      opacity 1
+      @media $LandscapeMedium
+        pt 150px
+      @media $desktopMin
+        padding 30px 0
+    &__bg
+      transform translate(-50%, -50%) scale(1)
+    &__menu
+      &-list
+        opacity 1
+        b 0
+        transition-delay .8s
+    &__phones
+      opacity 1
+      b 0
+      transition-delay 1s
+    &__socials
+      opacity 1
+      b 0
+      transition-delay 1.2s
+    
+html.touchevents
+  .burger__button
+    &:not(.open):hover
+      &:before
+        animation none
+      &:after
+        animation none
+    &:not(.open):hover .burger__button-meat
+      animation none

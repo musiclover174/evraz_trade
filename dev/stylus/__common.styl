@@ -1,113 +1,12 @@
 html,
 body
   font-family $os
+  color black
 body
   overflow-x hidden
-  &:not(.pace-done)
-    overflow hidden
-  &
-    .header,
-    .content,
-    .footer,
-    .swiper-buttons
-      opacity 0
-      transition .7s opacity
-    .content
-      z-index -5
-      pos relative
-      transition-delay 0.3s
-    .header,
-    .footer,
-    .swiper-buttons
-      transition-delay 0.8s
-  &.pace-done
-    .header,
-    .content,
-    .footer,
-    .swiper-buttons
-      opacity 1
-    .content
-      z-index auto
-    .pace
-      dn()
-  &.inner:not(.about)
-    pos relative
-    bgc $dark
-    .content
-      pt 190px
-    .container
-      @media $lDesktopMedium
-        max-width 100%
-        padding 0 30px
-    .header
-      pos absolute
-    &:before
-      content ""
-      position fixed
-      l 0
-      t 0
-      w 100vw
-      h 100vh
-      z-index -1
-      opacity 0
-      background url('../i/inner-bg.jpg') no-repeat center
-      background-size cover
-    &.career:before
-      background url('../i/career-bg.jpg') no-repeat center
-    &.contacts:before
-      background url('../i/contacts-bg.jpg') no-repeat center
-  &.inner.about
-    pos relative
-    bgc $dark
-    .content
-      pt 190px
-    .header
-      pos absolute
-    &:before
-      content ""
-      position fixed
-      l 0
-      t 0
-      w 100vw
-      h 100vh
-      z-index -1
-      opacity 0
-      background url('../i/about-bg.jpg') no-repeat center    
-      background-size cover
-  &.inner.pace-running
-    bgc white
-  &.inner.pace-done
-    &:before
-      opacity .5
-
-.pace
-  &-activity
-    size 222px 426px
-    background url('../i/opening.gif') no-repeat center
-    pos fixed
-    z-index 10
-    top 50%
-    l 50%
-    ml -111px
-    mt -213px
-      
-.container
-  w 100%
-  max-width 1600px
-  margin 0 auto
-  @media $lDesktopMax
-    max-width 1400px
-  @media $lDesktopMedium
-    max-width 1250px
-  @media $lDesktopSmall
-    max-width 1136px
-  @media $desktopMax
-    max-width 100%
-    padding 0 30px
-  @media $LandscapeMedium
-    padding 0 20px
     
 .content
+  padding 160px 65px 0
   h1:not([class])
     color white
     max-width 830px
@@ -236,69 +135,42 @@ div[class\^="table-scroller"]
 
 .btn
   ib()
-  bgc white
+  bgc $orange
   border 0
-  border-radius 18px
-  color $dark
+  color white
   outline none
   cursor pointer
-  fontify 14px 700 36px
-  letter-spacing .1em
-  text-transform uppercase;
-  padding 0 20px
-  transition .7s background, .7s color
-  @media $lDesktopMedium
-    fontify 12px 700 34px
+  size 116px
+  pos relative
+  fontify 15px 400 19px
+  padding 25px 19px 56px
+  text-align left
+  background-image url('../i/btn-bg.png')
+  background-blend-mode soft-light
+  background-repeat no-repeat
+  background-position top left
+  transition .7s background
+  &:after
+    content ""
+    pos absolute
+    size 35px 17px
+    l 20px
+    b 30px
+    background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAARCAMAAABgteXNAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAXVBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8/beDHAAAAHnRSTlMAqU8w5WIk3XYZ0YwBEMOfBAmzsaDB0L2NocIKshGrGyxnAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAFlJREFUKM+NkjcSgEAMA03mEhfI8f/PpKRi9lTveGRJIn8qSkFVdcNQ2/UMKW0sQm7wAaGYxohQmGaHkDWLkge14p1NK/KzH+TnTBf9dXM+GTln9JXT+7efF/fkBtgCWMQPAAAAAElFTkSuQmCC") no-repeat center
+    transition .7s opacity, .7s left
   &:hover
-    bgc $green
-    color white
+    background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgwAAAEZAQMAAADBu+/5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEX///////9VfPVsAAAAAXRSTlMD2e+J3AAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAoSURBVHja7cEBAQAAAIIg/69uSEABAAAAAAAAAAAAAAAAAAAAAADcGkmLAAHdDymqAAAAAElFTkSuQmCC")
+    &:after
+      l 30px
+      opacity 0
+  &_dark
+    bgc $dark
     
 .common
   &__title
     color $dark
     fontify 44px 400 54px
     mb 25px
-  &__back
-    ib()
-    pos relative
-    mt 75px
-    ml 56px
-    color $dark
-    fontify 23px 400 21px
-    transition .5s border
-    @media $LandscapeMedium
-      fontify 17px 400 21px
-      ml 41px
-    &:before
-      content ""
-      pos absolute
-      l -56px
-      t -1px
-      size 27px 25px
-      background url('../i/arleft_black.png') no-repeat 0 -756px
-      @media $LandscapeMedium
-        l -41px
-    &_white
-      &:before
-        background-image url('../i/arleft_white.png')
-    &:after
-      content ""
-      pos absolute
-      bgc alpha($dark, .25)
-      w 100%
-      h 1px
-      b 0
-      l 50%
-      transform translateX(-50%)
-      transition .7s width
-    &_white
-      color white
-      &:after
-        bgc alpha(white, .25)
-    &:hover:after
-      w 0
-    &:hover:before
-      animation arrAnimation 1s steps(28)
   &__input
     w 100%
     h 48px
@@ -445,83 +317,6 @@ div[class\^="table-scroller"]
       ml 32px
       size 9px
       background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJBAMAAAASvxsjAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEX///////////////////////////////////////////////////////9q+00tAAAADXRSTlMA0Do74eI5bGtqOM7MEv0urwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAA3SURBVAjXYxBiYGAWYFBRYDBNYGByYg5jYGBQLU0Akhw3GUDsKQoMDExRTE4MDKYLQMp2AbkHAKcGB4WerKhTAAAAAElFTkSuQmCC") no-repeat center
-      
-.page
-  &__subtitle
-    color white
-    fontify 26px 400 33px
-    max-width 770px
-    mt 57px
-    pb 130px
-    @media $lDesktopSmall
-      fontify 23px 400 30px
-      max-width 675px
-      mt 60px
-      pb 150px
-    @media $desktopMin
-      fontify 20px 400 27px
-      max-width 540px
-      pb 160px
-    @media $LandscapeMedium
-      pb 40px
-  &__whitebg
-    bgc white
-    pt 74px
-    pb 24px
-    @media $desktopMax
-      pt 40px
-    @media $LandscapeMedium
-      pt 40px
-  &__top
-    mb 65px
-    padding 0 85px
-    @media $desktopMax
-      padding 0 50px
-    @media $LandscapeMedium
-      padding 0
-      mb 45px
-    &_pzero
-      padding 0
-  &__withside
-    display flex
-    flex-direction row-reverse
-    align-items flex-start
-    justify-content space-between
-    @media $LandscapeMedium
-      db()
-  &__content
-    bgc white
-    &_transparent
-      bgc transparent
-    padding 74px 85px 24px
-    @media $desktopMax
-      padding 40px 50px 24px
-    @media $LandscapeMedium
-      padding 40px 30px 24px
-      ml -30px
-      w calc(100% + 60px)
-  &__aside
-    w 430px
-    @media $lDesktopMedium
-      w 385px
-    @media $desktopMedium
-      w 315px
-    @media $desktopMin
-      dn()
-    &-sticky
-      padding 0 20px 0 80px
-      @media $lDesktopMedium
-        padding 0 20px 0 50px
-  &__aside + &__content
-    w calc(100% - 430px)
-    @media $lDesktopMedium
-      w calc(100% - 385px)
-    @media $desktopMedium
-      w calc(100% - 315px)
-    @media $desktopMin
-      w 100%
-    @media $LandscapeMedium
-      w calc(100% + 60px)
 
 .fakecheckbox
   ib()
@@ -584,74 +379,10 @@ div[class\^="table-scroller"]
   &.visible
     visibility visible
     opacity 1
-      
-.breadcrumbs
-  mb 18px
-  color white
-  pl 106px
-  pos relative
-  @media $LandscapeMedium
-    mt -20px
-    pl 0
-  &:before
-    content ""
-    pos absolute
-    l 6px
-    t 11px
-    w 70px
-    h 1px
-    bgc white
-    @media $LandscapeMedium
-      dn()
-  &__href
-    color white
-    fontify 14px 400 18px
-    border-bottom 1px solid white
-    transition .5s border
-    &:hover
-      border-color transparent
-  &__delim
-    padding 0 11px
-    fontify 12px 400 18px
 
 input.warning,
 textarea.warning
   border-color #ff3a0f
 
-.common__form-result,
-form.success
-  dn()
-form.success + .common__form-result
-  db()
-  
 .hidden-block
   display none
-  
-.tippy-tooltip.light-theme
-  bgc white
-  box-shadow 0 6px 32px rgba(0, 0, 0, 0.21)
-  fontif 14px 400 18px
-  color $dark
-  padding 15px 19px
-  .tippy-backdrop
-    bgc white
-    color $dark
-  .tippy-arrow
-    border-top-color white
-    
-@keyframes arrAnimation {
-  0% { 
-    background-position: 0 0;
-  }
-  100% { 
-    background-position: 0 -756px;
-  }
-}
-@keyframes preloadAnimation {
-  0% { 
-    background-position: 0 0;
-  }
-  100% { 
-    background-position: 0 -15314px;
-  }
-}

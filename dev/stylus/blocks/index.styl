@@ -1,409 +1,289 @@
-.icar
-  h 100vh
-  > .swiper-wrapper
-    transition-timing-function cubic-bezier(0.86, 0, 0.07, 1)
-  .swiper-slide
-    &[data-color="dark"]
-      bgc $dark
-    &[data-color="light"]
-      bgc white
-    h 100%
-    pos relative
-    z-index 1
-    overflow hidden
-    display flex
-    align-items center
-    justify-content flex-start
-    &-active
-      & ^[0]
-        &__bg
-          transform translate(-50%, -50%) scale(1.08)
-        &__area
-          &-title
-            opacity 1
-            b 0
-            transition-delay .8s
-          &-text
-            opacity 1
-            b 0
-            transition-delay .9s
-          &-href
-            opacity 1
-            b 0
-            transition-delay 1.2s
-      .news__elem
-        &-imgover
-          w 100%
-        &:nth-child(1) .news__elem-imgover
-          transition-delay 1s
-        &:nth-child(2) .news__elem-imgover
-          transition-delay 1.2s
-        &:nth-child(3) .news__elem-imgover
-          transition-delay 1.4s
-        &-content
-          opacity 1
-          b 0
-          transition-delay .8s
-      .iemp
-        &__title
-          opacity 1
-          b 0
-          transition-delay .8s
-        &__subtitle
-          opacity 1
-          b 0
-          transition-delay 1s
-        &__text
-          opacity 1
-          b 0
-          transition-delay 1.2s
-        &__more
-          opacity 1
-          b 0
-          transition-delay 1.4s
-        &__content:before
-          w 70px
-          transition-delay 1.6s
-        &__btn
-          opacity 1
-          b 0
-          transition .7s opacity 1.8s, .7s bottom 1.8s, .7s background, .7s color, .7s box-shadow
-      &:not(.showmap) .iroad
-        &__title
-          opacity 1
-          b 0
-          transition-delay .8s
-        &__feat
-          opacity 1
-          b 0
-          transition-delay 1s
-        &__text
-          opacity 1
-          b 0
-          transition-delay 1.2s
-        &__where
-          opacity 1
-          b 0
-          transition-delay 1.2s
-        &__content:before
-          w 70px
-          transition-delay 1.4s
-        &__btn
-          opacity 1
-          b 0
-          transition .7s opacity 1.6s, .7s bottom 1.6s, .7s background, .7s color, .7s box-shadow
-      .iveg
-        &__title
-          opacity 1
-          b 0
-          transition-delay .8s
-        &__icon
-          opacity 1
-          t 0
-          transition-delay .8s
-        &__hrefover
-          opacity 1
-          b 0
-          transition-delay 1s
-        &__text
-          opacity 1
-          b 0
-          transition-delay 1.2s
-        &__content:before
-          w 70px
-          transition-delay 1.4s
-        &__tocat
-          opacity 1
-          b 0
-          transition .7s opacity 1.6s, .7s bottom 1.6s, .7s border
-  &__bg
-    opacity .5
-    z-index -1
-    imgCenteringMin()
-    transition 7s transform
-  &__area
-    &-over
-      &.changed
-        & ^[-2]
-          &-title:before,
-          &-text:before
-            content attr(data-change)
-          &-back
-            opacity 1
-            visibility visible
-          &-href
-            visibility hidden
-            opacity 0
-          &_more
-            max-height 400px
-            mt 40px
-            @media $lDesktopMax
-              mt 0px
-            @media $lDesktopMedium
-              mt -65px
-            @media $desktopMin
-              mt -30px
-              max-height 800px
-          &-stage
-            opacity 1
-            r 0
-            transition .7s opacity, .7s right
-            &_second
-              transition-delay .7s
-              @media $desktopMedium
-                ml 10px
-              @media $desktopMin
-                ml 0
-            &_third
-              transition-delay 1.4s
-              @media $desktopMedium
-                ml 10px
-              @media $desktopMin
-                ml 0
-    &_more
-      max-height 0
-      overflow hidden
-      transition 1s max-height
-    &__maxwidth
-      max-width 700px
-    &-back
-      cursor pointer
-      pos absolute
-      w 27px
-      h 25px
-      l 30px
-      t 30px
-      opacity 0
-      visibility hidden
-      background url('../i/arleft_white.png') no-repeat 0 -756px
-      transition .5s visible, .5s opacity
-      &:hover
-        animation arrAnimation 1s steps(28)
-    &-title
-      color white
-      fontify 120px 400 90px
-      mb 40px
-      ml -10px
-      pos relative
-      opacity 0
-      b -20px
-      transition .7s opacity, .7s bottom
-      @media $lDesktopMedium
-        fontify 100px 400 90px
-        mb 30px
-      @media $desktopMin
-        fontify 80px 400 84px
-      @media $LandscapeMedium
-        fontify 60px 400 64px
-        ml 0
-        mb 20px
-      &:before
-        content attr(data-default)
-    &-text
-      color white
-      fontify 42px 400 46px
-      pos relative
-      b -20px
-      opacity 0
-      transition .7s opacity, .7s bottom
-      @media $lDesktopMedium
-        fontify 36px 400 40px
-      @media $desktopMin
-        fontify 30px 400 34px
-        max-width 490px
-      &:before
-        content attr(data-default)
-    &-href
-      cursor pointer
-      mt 40px
-      ml 2px
-      color white
-      fontify 14px 700 16px
-      text-transform uppercase
-      letter-spacing .1em
-      pos relative
-      b -20px
-      opacity 0
-      transition .5s visible, .5s opacity, .7s opacity, .7s bottom
-      @media $lDesktopMedium
-        fontify 12px 700 16px
-      @media $LandscapeMedium
-        dn()
-      &:after
-        content ""
-        pos absolute
-        bgc alpha(white, .25)
-        w 100%
-        h 1px
-        b 0
-        l 50%
-        transform translateX(-50%)
-        transition .7s width
-      &:hover:after
-        w 0
-
-    &-stages
-      display flex
-      justify-content space-between
-      align-items flex-end
-      @media $desktopMin
-        flex-direction column
-        align-items flex-start
-    &-stage
-      w 364px
-      text-align center
-      pos relative
-      r -80px
-      opacity 0
-      transition 0s opacity, 0s right
-      &_first
-        w 265px
-        display flex
-        flex-wrap wrap
-      &_second
-        @media $desktopMin
-          align-self flex-end
-      @media $desktopMin
-        & + &
-          mt -100px
-    &-col
-      w calc(50% - 10px)
-      display flex
-      flex-direction column
-      & + &
-        ml 20px
-    &-square
-      color white
-      fontify 42px 400 40px
-      mb 10px
-      @media $lDesktopMedium
-        fontify 36px 400 40px
-        mb 8px
-      @media $desktopMin
-        fontify 30px 400 34px
-    &-img
-      max-width 100%
-    &-year
-      w 100%
-      color white
-      fontify 16px 400 23px
-      mt 20px
-      @media $lDesktopMedium
-        fontify 14px 400 21px
-    &-queue
-      w 100%
-      color white
-      fontify 16px 700 23px
-      mt 8px
-      @media $lDesktopMedium
-        fontify 14px 400 21px
-
-
-.ibanner
-  h 100vh
-  .swiper-slide
-    min-width 100vw
-    pos relative
-    z-index 1
-    overflow hidden
-    display flex
-    align-items center
-    justify-content flex-start
-    &-active
-      & ^[0]
-        &__bg
-          transition 7s transform
-          transform translate(-50%, -50%) scale(1.08)
-        &__title
-          opacity 1
-          b 0
-          transition-delay .8s
-        &__text
-          opacity 1
-          b 0
-          transition-delay .9s
-        &__more
-          opacity 1
-          b 0
-          transition-delay 1.2s
-        &__content:before
-          w 70px
-          transition-delay 1.4s
+.banner
+  pos relative
   .swiper-buttons
-    b 62px
-    @media $LandscapeMedium
-      b 29px
-  &__bg
-    opacity .5
-    z-index -1
-    imgCenteringMin()
-  &__maxwidth
-    max-width 700px
-  &__title
-    color white
-    fontify 72px 400 76px
-    pos relative
-    opacity 0
-    b -20px
-    transition .7s opacity, .7s bottom
-    @media $lDesktopMedium
-      fontify 60px 400 64px
-    @media $desktopMin
-      max-width 540px
-    @media $LandscapeMedium
-      fontify 36px 400 40px
+    pos absolute
+    z-index 1
+    r 228px
+    t 65px
+  .swiper-slide
+    overflow hidden
+    h 560px
+    &-active
+      & ^[0]__img
+        transform scale(1.02)
+  &__img
+    pos absolute
+    l 0
+    t 0
+    will-change transform
+    transition 4s transform
+    transform scale(1)
   &__content
-    mt 32px
-    pl 106px
+    pos absolute
+    z-index 1
+    t 0
+    r 0
+    h 100%
+    bgc $grey
+    w 393px
+    padding 134px 64px 0
+  &__title
+    font-family $officina
+    fontify 48px 400 52px
+    mb 33px
+  &__text
+    fontify 15px 400 21px
+  &__btn
+    pos absolute
+    r 213px
+    b -38px
+    z-index 1
+
+.special
+  mt 231px
+  padding 0 35px
+  &__count
+    float right
+    font-family $officina
+    fontify 24px 400 28px
+    max-width 250px
+    text-align right
+    mt 5px
+  &__title
+    font-family $officina
+    fontify 48px 400 52px
+    max-width 500px
+    mb 32px
+  &__subtitle
+    fontify 15px 400 21px
+    max-width 470px
+  &__bottom
+    mt 75px
+    h 140px
     pos relative
-    @media $LandscapeMedium
-      pl 0
+    display flex
+    z-index 1
     &:before
       content ""
+      bgc $orange
       pos absolute
-      l 6px
-      t 11px
-      w 0
-      h 1px
+      z-index -1
+      l 0
+      t 0
+      h 100%
+      w calc(100% + 100px)
+  &__links
+    display flex
+    h 100%
+    align-items center
+    pl 40px
+  &__link
+    max-width 170px
+    pb 7px
+    &:first-child
+      max-width 120px
+    & + &
+      ml 34px
+    &-type
+      color white
+      fontify 12px 400 21px
+      mb -3px
+    &-href
+      color white
+      fontify 15px 600 25px
+      border-bottom 2px solid white
+      transition .5s border
+      &:hover
+        border-color transparent
+  &__car
+    size 570px 570px
+    t 50%
+    &.swiper-container
+      mt -353px
+      ml 94px
+      overflow visible
+    .swiper-buttons
+      pos absolute
+      r -140px
+      t 340px
+  &__hint
+    pos absolute
+    bgc $dark
+    size 25px
+    color white
+    cursor pointer
+    text-align center
+    fontify 23px 200 24px
+    &:before
+      content attr(data-text)
+      pos absolute
+      b 25px
+      w 250px
+      text-align left
+      padding 25px 29px
       bgc white
-      transition .7s width
-      @media $LandscapeMedium
-        dn()
-  &__text
-    color white
-    fontify 16px 400 23px
-    mb 30px
-    max-width 515px
+      box-shadow 2.5px 4.3px 35px rgba(0, 0, 0, 0.25)
+      color black
+      fontify 15px 400 21px
+      box-sizing border-box
+      left 50%
+      ml -125px
+      opacity 0
+      visibility hidden
+      transition .7s opacity, .7s visibility, .7s bottom
+    &:hover:before
+      visibility visible
+      b 35px
+      opacity 1
+      
+.features
+  display flex
+  mt 402px
+  padding 0 35px
+  pos relative
+  z-index 1
+  &:before
+    content ""
+    pos absolute
+    z-index -1
+    w calc(100% - 150px)
+    h 375px
+    l 75px
+    t 143px
+    bgc $grey
+  &__content
+    w 500px
+  &__title
+    font-family $officina
+    fontify 48px 400 52px
+    mb 85px
+  &__list
+    display flex
+    flex-wrap wrap
+    ml 26px
+  &__item
+    pl 30px
+    fontify 15px 600 21px
     pos relative
-    b -20px
-    opacity 0
-    transition .7s opacity, .7s bottom
-    @media $lDesktopMedium
-      fontify 14px 400 21px
-    @media $desktopMin
-      max-width 315px
-    @media $PortraitMin
-      dn()
-  &__more
-    color white
-    fontify 14px 700 16px
-    text-transform uppercase
-    letter-spacing .1em
-    pos relative
-    b -20px
-    opacity 0
-    transition .7s opacity, .7s bottom
-    @media $lDesktopMedium
-      fontify 12px 700 16px
+    max-width 140px
+    mb 38px
+    & + &
+      ml 112px
+    &:nth-child(2n - 3)
+      ml 0
+    &:before
+      content attr(data-number) ". "
+      pos absolute
+      l 0
+      t 0
+      fontify 15px 600 21px
     &:after
       content ""
       pos absolute
-      bgc alpha(white, .25)
-      w 100%
-      h 1px
-      b 0
-      l 50%
-      transform translateX(-50%)
+      l -25px
+      t 5px
+      w 1px
+      h 30px
+      bgc #e1e1e1
+  &__imgs
+    pos relative
+    z-index 1
+    w calc(100% - 500px)
+    h 629px
+    display flex
+    align-content flex-end
+    align-items flex-end
+  &__img
+    &_img1
+      background url('/img/feat2.png') no-repeat top left
+      size 0 422px
       transition .7s width
+      &.visible
+        w 280px
+    &_img2
+      background url('/img/feat1.png') no-repeat top left
+      size 0 730px
+      pos absolute
+      z-index -1
+      l 213px
+      t -160px
+      transition .7s width
+      &.visible
+        w 600px
+
+.video
+  mt 200px
+  ml -65px
+  w calc(100% + 130px)
+  h 100vh
+  max-height 700px
+  pos relative
+  z-index 1
+  background-size cover
+  &__play
+    pos absolute
+    z-index 1
+    l 50%
+    t 50%
+    size 60px
+    mt -30px
+    ml -30px
+    border-radius 50%
+    &:before
+      content ""
+      pos absolute
+      size 10px 13px
+      t 23px
+      l 26px
+      background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAANCAMAAACn6Q83AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOVBMVEX///////////////////////////////////////////////////////////////////////////+0EB4eAAAAEnRSTlMAdgLAH/BbqBHjQ/6NCKX9B+J19h11AAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAD1JREFUCNdjEGJkYoACISFmFjhTiJUNzhQSYueAM4U4ueBMIW4eXhhTSIgPxuTnEYAyBbkwTECYi7AN7gYAYAoE1tuqH1sAAAAASUVORK5CYII=") no-repeat center
+    &:after
+      content ""
+      cursor pointer
+      pos absolute
+      z-index -1
+      bgc $orange
+      border-radius 50%
+      size 100%
+      l 50%
+      t 50%
+      transform translate(-50%, -50%)
+      transition .7s background, .7s width, .7s height
     &:hover:after
-      w 0
+      size 110%
+      bgc $dark
+
+.catalog
+  mt 73px
+  padding 0 35px
+  &__smalltitle
+    db()
+    color $orange
+    fontify 15px 600 21px
+  &__title
+    mt 16px
+    max-width 710px
+    color black
+    font-family $officina
+    fontify 48px 400 52px
+  &__list
+    display flex
+    flex-wrap wrap
+    mt 40px
+    ml -100px
+    w calc(100% + 200px)
+  &__item
+    h 350px
+    w 25%
+    color white
+    fontify 15px 600 25px
+    padding 57px 27px 0 117px
+    border-bottom 1px solid #404040
+    border-right 1px solid #404040
+    &:nth-child(3),
+    &:last-child
+      border-right 0
+    &_wide
+      w 50%
+      padding 57px 95px 0
+      border-right 1px solid #404040
+      border-bottom 1px solid #404040
