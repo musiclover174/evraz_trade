@@ -4,43 +4,23 @@ body
   color black
 body
   overflow-x hidden
-    
+
 .content
   padding 160px 65px 0
+  
+.content,
+.text
+  font-family $os
   h1:not([class])
-    color white
-    max-width 830px
+    font-family $officina
     fontify 72px 400 76px
     margin 63px 0 35px
-    @media $lDesktopMedium
-      fontify 60px 400 64px
-      max-width 720px
-    @media $desktopMin
-      fontify 48px 400 52px
-    @media $LandscapeMedium
-      fontify 36px 400 42px
-  h2:not([class])
-    color $dark
-    fontify 42px 400 46px
-    margin 63px 0 28px
-    @media $desktopMax
-      fontify 38px 400 42px
-    @media $lDesktopSmall
-      fontify 36px 400 40px
-    @media $LandscapeMedium
-      fontify 30px 400 34px
-      margin 45px 0 28px
-  h3:not([class])
-    color $dark
-    fontify 30px 400 36px
-    margin 65px 0 38px
-    @media $LandscapeMedium
-      fontify 26px 400 34px
-      margin 45px 0 28px
+  h2:not([class]),
+  h3:not([class]),
   h4:not([class])
-    color $dark
-    fontify 24px 400 34px
-    margin 43px 0 16px
+    font-family $officina
+    fontify 30px 400 36px
+    margin 75px 0 23px
   img:not([class])
     margin 5px 0
     max-width 100%
@@ -48,19 +28,17 @@ body
     list-style  none
     margin  23px 0
   ul:not([class]) li
-    pl 30px
+    pl 40px
     pos relative
-    fontify 20px 400 27px
-    @media $lDesktopSmall
-      fontify 17px 400 24px
+    fontify 15px 400 21px
   ul:not([class]) li + li
-    mt 25px
+    mt 18px
   ul:not([class]) li:before
     content ""
     pos absolute
-    l 0
-    t 13px
-    size 14px 1px
+    l 1px
+    t 11px
+    size 20px 1px
     bgc $dark
   ol:not([class])
     list-style none
@@ -69,9 +47,7 @@ body
   ol:not([class]) li
     pl 30px
     pos relative
-    fontify 20px 400 27px
-    @media $lDesktopSmall
-      fontify 17px 400 24px
+    fontify 15px 400 21px
   ol:not([class]) li + li
     mt 24px
   ol:not([class]) li:before
@@ -83,19 +59,14 @@ body
     w 30px
     pr 9px
     color $orange
-    fontify 20px 400 27px
-    @media $lDesktopSmall
-      fontify 17px 400 24px
+    fontify 15px 400 21px
   p:not([class])
-    color $dark
-    fontify 20px 400 27px
-    margin 23px 0
-    @media $lDesktopSmall
-      fontify 17px 400 24px
+    fontify 15px 400 21px
+    margin 18px 0
   a:not([class])
-    color $green
-    border-bottom 1px solid
-    transition .5s border
+    color black
+    border-bottom 2px solid $orange
+    transition .7s border
     &:hover
       border-color transparent
  
@@ -105,20 +76,20 @@ body
     margin-bottom 0 !important
 
   table
-    margin 30px 0
-    border 2px solid #9db038
+    margin 24px 0
   table th
     text-align left
-    padding 16px 24px
-    color $dark
-    bgc $orange
+    padding 19px 25px 14px
+    color black
     fontify 15px 400 21px
-    border 1px solid #f0f3e1
+    border-top 1px solid #e5e5e5
   table td
-    padding 18px 24px
+    padding 19px 25px 14px
     color $dark
     fontify 15px 400 21px
-    border 1px solid #f0f3e1
+    border-top 1px solid #e5e5e5
+  table tbody tr:last-child
+    border-bottom 1px solid #e5e5e5
 
 input::-webkit-input-placeholder
   color alpha(white, .5)
@@ -165,43 +136,39 @@ div[class\^="table-scroller"]
       opacity 0
   &_dark
     bgc $dark
+  &_small
+    &:after
+      b 41px
     
 .common
-  &__title
-    color $dark
-    fontify 44px 400 54px
-    mb 25px
-  &__input
-    w 100%
-    h 48px
-    border 0
-    border-bottom 1px solid white
-    bgc transparent
+  &__label
+    opacity .25
     color white
+    fontify 12px 600 18px
+    db()
+    mb 2px
+  &__inp
+    w 100%
+    h 42px
+    border 1px solid transparent
+    bgc alpha(black, .13)
+    color white
+    padding 0 16px
     font-family $os
-    font-size 17px
-    line-height 400
+    fontify 15px 400 21px
     transition .5s border
-    @media $lDesktopSmall
-      font-size 14px
-    &:focus + ^[0]__placeholder,
-    &.notempty + ^[0]__placeholder
-      dn()
   &__textarea
     w 100%
-    h 116px
+    h 92px
+    border 1px solid transparent
     overflow hidden
     resize none
-    padding 11px 18px
-    border 2px solid #ececec
-    bgc transparent
-    color $dark
+    padding 11px 16px
+    bgc alpha(black, .13)
+    color white
     font-family $os
-    fontify 14px 400 24px
-    transition .5s border
-    &:focus + ^[0]__placeholder,
-    &.notempty + ^[0]__placeholder
-      dn()
+    fontify 15px 400 21px
+    transition .7s border
   &__sbm
     font-family $os
     mt 5px
@@ -213,7 +180,7 @@ div[class\^="table-scroller"]
     cursor pointer
     transition .5s border
     &.warning
-      border-color #ed1c24
+      border-color $orange
   &__placeholder
     pos absolute
     z-index -1
@@ -234,41 +201,23 @@ div[class\^="table-scroller"]
       pos relative
       t 0
   &__col
-    w calc(50% - 25px)
-    &_wide
-      w calc(100% - 212px)
-    &_short
-      w 162px
-    &_iroad
-      @media $LandscapeMedium
-        &:first-child
-          dn()
+    w calc(50% - 16px)
     @media $LandscapeMedium
       w 100%
       & + &
-        mt 22px
+        mt 27px
   &__row
-    display flex
-    justify-content space-between
-    pos relative
-    w 100%
-    @media $LandscapeMedium
-      flex-direction column
+    &_flex
+      display flex
+      justify-content space-between
+      pos relative
+      w 100%
     & + &
-      mt 32px
-      @media $LandscapeMedium
-        mt 22px
+      mt 27px
   &__fileover
     w 100%
     pos relative
-    pt 14px
-    pb 14px
-    border-bottom 1px solid white
-    transition .5s border
-    &.warning
-      border-color #ed1c24
-    & + &
-      mt 20px
+    pt 25px
   &__file
     pos absolute
     w 0
@@ -279,32 +228,22 @@ div[class\^="table-scroller"]
     &name
       ib()
       pos relative
-      l 26px
+      l 48px
       cursor pointer
       color white
-      fontify 14px 700 14px
-      letter-spacing .1em
-      text-transform uppercase
-      border-bottom 1px solid alpha(white, .25)
+      fontify 15px 400 21px
+      border-bottom 2px solid $orange
       transition .5s border
-      @media $lDesktopSmall
-        font-size 12px
       &.choosed,
       &:hover
         border-color transparent
-      &:after
-        content "*"
-        pos absolute
-        r -11px
-        fontify 23px 400 14px
-        t -3px
       &:before
         content ""
         pos absolute
-        l -24px
-        t 3px
-        size 16px 8px
-        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAMAAADHqI+lAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAe1BMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////QYBnOAAAAKHRSTlMAFJLi/uaFBRrhukMXERM+1IeisgE0t8xM8EeJRFvnRmnsaKQ1uVUVNSas3QAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABYSURBVAjXRc1ZEkAwEATQJvZ9jxC74P4nRATvr6eqewBNJ8ahmJYNx/X8IHxEcZIiywuUFZWAmoE1AGm5BHQ92PAf+DjNWK7KqipUbLhGxTcKadfJ+/WOJ3rfCXxQ+WZgAAAAAElFTkSuQmCC") no-repeat center
+        l -38px
+        t 0
+        size 24px 23px
+        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAXCAMAAAAm/38fAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABL1BMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+TyruBAAAAZHRSTlMAEy4XeNXRdyiW7mk4Y+SLwY3yMGDcFoE2h/Ec3/MrdEniGypy7QISjwumB9u4BM6+z7vsy8i89S1zA8L5L8q6EOs6vW9FU+UpWR3TVs25gsDQjBgBoZmKBtQ96YTvbiFYetZMI7yxYQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAEBSURBVCjPY2DAAIxMzAzYAAsrKxs7uiAHAwMnFzcPLx8Lqji/AIOgkDCQISIqhiwuLiQhKQUSZ5CWkUAWl5WT5wKLMygoKiGrV1ZRBYmrMagraqCqB4lrailp6+giiyuDxfX0DZQMjVDMkTcGiZsYiZmaIYvLgcXVTMwYBZDVm1tYgsyxAopbI4vb2PIa2wLNsQOqt0cST5FwcHQCme+MYo5LiiuDmztI3EwdWdxD1ZOBwcub08fXD0WcwT8ARDoZBAYFCxiFIEmEhoEpKyugF5DFGcKh3o+IRDYHCKKiXUFUsA6aOANDTGxcPHOCjC4DBkiMjDRJCsIW/czJCl4YggDELiK7BTHsCwAAAABJRU5ErkJggg==") no-repeat center
       &.choosed + ^[-1]delete
         visibility visible
         cursor pointer
@@ -313,41 +252,45 @@ div[class\^="table-scroller"]
     &delete
       ib()
       visibility hidden
-      mt 3px
-      ml 32px
-      size 9px
-      background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJBAMAAAASvxsjAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEX///////////////////////////////////////////////////////9q+00tAAAADXRSTlMA0Do74eI5bGtqOM7MEv0urwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAA3SURBVAjXYxBiYGAWYFBRYDBNYGByYg5jYGBQLU0Akhw3GUDsKQoMDExRTE4MDKYLQMp2AbkHAKcGB4WerKhTAAAAAElFTkSuQmCC") no-repeat center
+      mt 6px
+      ml 58px
+      size 10px
+      background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAD1BMVEX3bE73bE73bE73bE7////Z+NqaAAAAA3RSTlMAf4C/aSLHAAAAAWJLR0QEj2jZUQAAAAlwSFlzAAALEgAACxIB0t1+/AAAADdJREFUCNcVytENACAIA9HDCSAuYGACcP/drD9Nc3kEEJRjw2r2gYpRXFcXu67d2XwgJiCWivkAYb8DZG1gCrwAAAAASUVORK5CYII=") no-repeat center
 
 .fakecheckbox
   ib()
   pos relative
-  margin 10px 0
+  mt 7px
   &__label
     ib()
     color white
-    fontify 14px 400 24px
+    fontify 15px 400 21px
     pos relative
-    pl 37px
+    pl 33px
     pt 7px
     &:before 
       content ""
       pos absolute
-      l 0px
-      t 8px
-      size 20px
+      l -1px
+      t 50%
+      mt -5px
+      size 18px
       border 1px solid #ececec
       cursor pointer
       transition .5s border
     &:after
       content ""
       pos absolute
-      size 16px 13px
-      background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANBAMAAABSlfMXAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAG1BMVEX///////////////////////////////////8HBRbfAAAACHRSTlMAAyio8Dc4NlLA1+AAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAOUlEQVQI12NgAANGBQjNIOwKFbCAMoRbArAIMAlABUIMoSpSmgUhKlg9jKFaQjqgWlhdAqDGl4JJAP/cCjh7XMPDAAAAAElFTkSuQmCC") no-repeat center
-      l 4px
-      t 13px
+      size 14px 10px
+      background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAMAAACzB5/1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAllBMVEX3bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE73bE7////q9A/bAAAAMHRSTlMAA6BsB66EC7v+cxHH/GUBGND5V80UH9r1Sk/31xwo4vE+QvPfU+nrMjft4yktxCBwMwDhAAAAAWJLR0Qx2dsdcgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAFVJREFUCNdjYEAARiZmJB4LqwEbgsfOwcmF4HHz8PIBKX52ME9AUEgYRDOJiAJJMXEJSbCwlLSMLIOcvIIiVJOSsoqqmroG3BBNLQNtHSQLdfX0YUwA+mEE0mQdlfMAAAAASUVORK5CYII=") no-repeat center
+      l 2px
+      t 50%
+      mt 0px
       opacity 0
       cursor pointer
       transition .5s opacity
+    a:not([class])
+      color white
   &__truecheck
     pos absolute
     l 0
@@ -359,30 +302,11 @@ div[class\^="table-scroller"]
     &:checked + ^[0]__label:after
       opacity 1
     &.warning + ^[0]__label:before 
-      border-color #ed1c24
-    
-.totop
-  pos fixed
-  z-index 5
-  b 20px
-  r 20px
-  cursor pointer
-  size 44px
-  border-radius 50%
-  box-shadow 0 6px 19px rgba(0, 0, 0, 0.12)
-  visibility hidden
-  opacity 0
-  background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKBAMAAABLZROSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///////////////////////////////////////////////////////////////9Or7hAAAAAD3RSTlMAPTz08p6hA6DzCennlZZZY9tOAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAEhJREFUCNdjYAACIQYoYDRRgLKE/ztBhezDvkAEhb+W5ztBhMIZysCCwl8LGNhBgiAhBoaKnwoMq4FCDAzs/acYGK+DtdUpAACFthD1OC0MSwAAAABJRU5ErkJggg==") no-repeat center #e76f17
-  transition .5s visible, .5s box-shadow, .5s opacity
-  &:hover
-    box-shadow none
-  &.visible
-    visibility visible
-    opacity 1
+      border-color $orange
 
 input.warning,
 textarea.warning
-  border-color #ff3a0f
+  border-color $orange
 
 .hidden-block
   display none

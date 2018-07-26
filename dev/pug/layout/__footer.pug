@@ -4,5 +4,137 @@ footer.footer
       img(src="img/logo.png").footer__logo
     p.footer__copy © «Евраз-Трейд», 2018
   a(href="https://www.dextra.ru/", target="_blank").footer__dextra
-    span dextra
+    span
     | Разработка<br>сайта
+    
+.hidden-block
+  #item.popup
+    .popup-scrollable.js-scrollable
+      section.card__over
+        aside.card__imgover
+          img(src="img/card1.jpg").card__img
+        .card__info.text
+          h3.card__title Полип-грейферы Rozzi
+          p Грейферы гидравлические, многочелюстные применяются в качестве навесного грузозахватного оборудования на перегружателях, экскаваторах, манипуляторах, КМУ различных моделей и брендов. Могут поставляться отдельно, а так же в сборе с ротатором (для поворота на 360˚) и подвеской соответствующей размерам стрелы.
+          p Предназначены для погрузки, перевалки сыпучих материалов различных материалов: металлолом, кузова машин, городской мусор, промышленные отходы, камни, бумага, картон, пластик, дерево, б/у шины. 
+          p В зависимости от  поставленной задачи, перегружаемого материала (удельного веса , размера) и модели техники (вес, грузоподъемность), подбираются  оптимальные модели грейферов, более мощные для тяжелых материалов и облегченные для легких, а так же необходимый тип лепестка: P-PA-S-SL.
+          .card__download
+            p.card__download-type PDF, 1.2 Мб
+            a(href="#").card__download-href Скачать каталог многочелюстных грейферов
+            button(type="button", data-fancybox, data-src="#feedback").btn.btn_red.card__btn Оставить заявку
+          h3 Особенности грейферов Rozzi
+          ul
+            li Грейферы Rozzi производятся в соответствии с Директивой Евросоюза 2006/42/CE.
+            li Весь процесс сварки, а так же сварщики аттестованы независимым внешним органом.
+            li Форма лепестков сконструирована таким образом, чтобы захватывать, как можно больше материала, при этом обеспечивая надежность захвата. 
+            li Поставляются на такие ведущие Европейские предприятия изготовители техники как: SENNEBOGEN Maschinenfabrik GmbH, Mantsinen, Liebherr, Terex-Fuchs GmbH, Solmec S.p.A, TABARELLI S.p.A, COLMAR S.p.A, CATERPILLAR, KOMATSU, HITACHI, JCB, ATLAS, FASSI, PENZ, BERGER Palfinger, Marchesi, Epsilon, HMF, Cranab, Kesla, Hiab, LIV, Effer, Cormach, PM, Hyva.
+          h3 Материалы изготовления
+          p Для изготовления используются следующие материалы:
+          table
+            tbody
+              tr
+                td Каркас
+                td Сталь S355 J2 + N
+              tr
+                td Зуб / Пластина внутри зуба
+                td Сталь Hardox 400
+              tr
+                td Наконечник
+                td Закаленная борсодержащая сталь
+              tr
+                td Пальцы
+                td Сталь 39NiCrMo3, закаленные + поверхность HRC=55
+              tr
+                td Втулки
+                td Сталь S355, нитроцементации HRC =60/65
+              tr
+                td Валы
+                td Сталь 39NiCrMo3 + поверхностное хромирование
+          h3 Качество изделий
+          p Перед отправкой с завода Rozzi, все новое оборудование подлежит следующему контролю:
+          ul
+            li проверка функционирования,
+            li проверка точности размеров,
+            li проверка качества сварных швов,
+            li проверка всех уплотнений, соединений / уплотнения шлангов.
+          h3 Примеры комплектаций
+          p Полип-грейферы Rozzi S.p.A. могут быть установлены любые виды и модели техники, включая модели крупнейших Европейских производителей:
+          ul.card__examples
+            li.card__example
+              img(src="img/card-ex1.jpg").card__example-img
+              p.card__example-name На манипуляторе без ротатора
+            li.card__example
+              img(src="img/card-ex2.jpg").card__example-img
+              p.card__example-name На перегружателе без ротатора
+            li.card__example
+              img(src="img/card-ex3.jpg").card__example-img
+              p.card__example-name С ротатором
+            li.card__example
+              img(src="img/card-ex4.jpg").card__example-img
+              p.card__example-name С ротатором
+          .card__imgs
+            h3 Грейферы Rozzi в действии
+            .card__car.js-card-imgs.swiper-container
+              .swiper-wrapper
+                .swiper-slide
+                  img(src="img/about.jpg").card__car-img
+            .swiper-buttons
+              .swiper-button-prev.swiper-button-prev_dark
+              .swiper-button-next.swiper-button-next_dark
+          .card__download
+            p.card__download-type PDF, 1.2 Мб
+            a(href="#").card__download-href Скачать каталог многочелюстных грейферов
+            button(type="button", data-fancybox, data-src="#feedback").btn.btn_red.card__btn Оставить заявку
+  #feedcall.popup
+    form.popup__form
+      .common__row.common__row_flex
+        .common__col
+          p.popup__title Обратный звонок
+          p.popup__subtitle Оставьте заявку, наш менеджер свяжется с вами и окажет полную консультацию по любым интересующим вас вопросам.
+        .common__col
+          .common__row.common__row_flex
+            .common__col
+              label.common__label Ваше имя*
+              input(type="text", data-req="req").common__inp
+            .common__col
+              label.common__label Телефон*
+              input(type="text", data-req="req").common__inp.js-phone
+          .common__row
+            .fakecheckbox
+              input(type="checkbox", value="", name="agreement", checked)#agreement2.fakecheckbox__truecheck
+              label(for="agreement2").fakecheckbox__label Даю согласие на обработку 
+                a(href="#") персональных данных
+          button(type="submit").btn.btn_red.btn_small.contacts__btn Отправить 
+  #feedback.popup
+    p.popup__title Оставить заявку
+    p.popup__subtitle Оставьте заявку, мы свяжемся с Вами в ближайшее время. Для наиболее правильного подбора необходимого грузозахватного оборудования просим ответить на вопросы * 
+    form.popup__form.popup__form_top
+      .common__row.common__row_flex
+        .common__col
+          .common__row
+            label.common__label Состав заявки
+            textarea.common__textarea
+            p.help__hint * – Укажите модель подходящего грейфера, или, если вы еще не определились, по возможности напишите: тип грейфера (двухчелюстной – с зубом/без, или многочелюстной – тип лепестка:  S, SL, P, PA), перегружаемый материал  (удельный вес),  для какой модели техники, максимально допустимый вес грейфера с грузом, для электрогидравлических  укажите грузоподъемность крана.
+        .common__col
+          .common__row.common__row_flex
+            .common__col
+              label.common__label Ваше имя*
+              input(type="text", data-req="req").common__inp
+            .common__col
+              label.common__label Телефон*
+              input(type="text", data-req="req").common__inp.js-phone
+          .common__row
+            label.common__label Электронная почта
+            input(type="text").common__inp
+          .common__row.common__row_flex
+            .common__col
+              .common__fileover
+                input(type="file", name="").common__file#file1.js-common-fileinput
+                label(for="file1", data-default="Прикрепить файл").common__filename.js-common-file Прикрепить файл
+                button(type="button").common__filedelete.js-common-filedelete
+            .common__col
+              .fakecheckbox
+                input(type="checkbox", value="", name="agreement", checked)#agreement3.fakecheckbox__truecheck
+                label(for="agreement3").fakecheckbox__label Даю согласие на обработку 
+                  a(href="#") персональных данных
+      button(type="submit").btn.btn_red.btn_small.help__btn Отправить

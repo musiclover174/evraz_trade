@@ -54,7 +54,7 @@
         ml 27px
     &-href
       color black
-      fontify 17px 700 20px
+      fontify 17px 600 20px
       pos relative
       transition .7s color
       &:after
@@ -67,11 +67,44 @@
         l 50%
         transform translateX(-50%)
         transition .7s width
-      &.active
-        color $yellow
-      &:not(.active):hover:after
+      &.active:after
+      &:not(.acitve):hover:after
         w 100%
 
+  &.fixed_ready
+    pos fixed
+    t -140px
+    box-shadow none
+    &:before
+      dn()
+  &.fixed
+    z-index 11
+    h 116px
+    bgc white
+    pt 0
+    t 0
+    box-shadow 2.5px 4.3px 35px rgba(0, 0, 0, 0.25)
+    transition 1.2s top, .7s box-shadow .2s
+    &:before
+      dn()
+    & ^[0]
+      &__logo
+        &-hint
+          color black
+        &-img
+          filter invert(100%)
+      &__info
+        mt 26px
+        mr 30px
+        &-phone
+          fontify 15px 600 21px
+        &-days
+          mt 6px
+      &__menu
+        mr 128px
+        mt 50px
+        &-href
+          fontify 15px 600 21px
 .burger
   &__bg
     pos absolute

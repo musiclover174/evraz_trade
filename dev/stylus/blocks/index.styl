@@ -271,19 +271,436 @@
     mt 40px
     ml -100px
     w calc(100% + 200px)
+    counter-reset catCounter
+    transition .7s background
   &__item
+    pos relative
+    z-index 1
+    cursor pointer
     h 350px
     w 25%
     color white
     fontify 15px 600 25px
-    padding 57px 27px 0 117px
+    padding 57px 43px 0 94px
     border-bottom 1px solid #404040
     border-right 1px solid #404040
+    span
+      pos relative
+      &:after
+        content ""
+        pos absolute
+        size 35px 17px
+        l -10px
+        b -35px
+        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAARCAMAAABgteXNAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAXVBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8/beDHAAAAHnRSTlMAqU8w5WIk3XYZ0YwBEMOfBAmzsaDB0L2NocIKshGrGyxnAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAFlJREFUKM+NkjcSgEAMA03mEhfI8f/PpKRi9lTveGRJIn8qSkFVdcNQ2/UMKW0sQm7wAaGYxohQmGaHkDWLkge14p1NK/KzH+TnTBf9dXM+GTln9JXT+7efF/fkBtgCWMQPAAAAAElFTkSuQmCC") no-repeat center
+        opacity 0
+        transition .7s left, .7s opacity
+    &:hover 
+      span:after
+        l 0
+        opacity 1
+    &:before
+      counter-increment catCounter
+      content counter(catCounter) ". "
+      pos absolute
+      l 62px
+      t 57px
+    &:after
+      content ""
+      pos absolute
+      z-index -1
+      l 0
+      t 0
+      size 100%
+      background-color $orange
+      opacity 0
+      transition .7s opacity
+    &:hover:after
+      opacity .75
     &:nth-child(3),
     &:last-child
       border-right 0
     &_wide
       w 50%
-      padding 57px 95px 0
       border-right 1px solid #404040
       border-bottom 1px solid #404040
+  &__official
+    mt 200px
+    display flex
+    align-items flex-start
+    padding 0 35px
+    pos relative
+    z-index 1
+    &-content
+      w 495px
+      padding 59px 0 59px 75px
+      &:before
+        content ""
+        pos absolute
+        z-index -1
+        l 35px
+        t 0
+        h 100%
+        w 60%
+        bgc $grey
+    &-title
+      font-family $officina
+      fontify 48px 400 52px
+    &-subtitle
+      fontify 15px 400 21px
+      mt 32px
+    &-files
+      min-height 166px
+      w calc(100% - 495px)
+      mt 55px
+      bgc $orange
+      display flex
+      align-items center
+      padding 0 35px 0 65px
+    &-file
+      pb 7px
+      & + &
+        ml 36px
+      &-info
+        color white
+        fontify 12px 400 21px
+        mb -3px
+      &-href
+        color white
+        fontify 15px 600 25px
+        border-bottom 2px solid white
+        transition .5s border
+        &:hover
+          border-color transparent
+.gallery
+  padding 59px 0 0 110px
+  mt 200px
+  display flex
+  w calc(100% + 65px)
+  pos relative
+  &:before
+    content ""
+    pos absolute
+    z-index -1
+    l 35px
+    t 0
+    h 720px
+    w 90%
+    bgc $grey
+  &__side
+    w 297px
+  &__smalltitle
+    color $orange
+    fontify 15px 600 21px
+  &__title
+    mt 17px
+    font-family $officina
+    fontify 48px 400 52px
+  &__catlist
+    display flex
+    flex-direction column
+    mt 62px
+    pr 55px
+  &__catitem
+    & + &
+      mt 19px
+    &-href
+      color black
+      fontify 15px 600 21px
+      transition .7s color
+      &.active,
+      &:hover
+        color $orange
+  &__photos
+    flex-grow 1
+    mt 8px
+    &-tab
+      dn()
+      &.active
+        display flex
+  &__photo
+    &-col
+      display flex
+      flex-direction column
+      & + &
+        ml 30px
+      &:first-child
+        w 300px
+        text-align right
+      &:last-child
+        flex-grow 1
+    &-elem
+      pos relative
+      &:after
+        content ""
+        pos absolute
+        z-index 1
+        l 0
+        t 0
+        size 100%
+        background-color $orange
+        opacity 0
+        transition .7s opacity
+      &:hover:after
+        opacity .75
+      & + &
+        mt 30px
+      img
+        max-width 100%
+
+.help
+  mt 200px
+  margin 200px 35px 0
+  bgc $dark
+  padding 58px 147px 59px 63px
+  pos relative
+  &__title
+    color white
+    font-family $officina
+    fontify 48px 400 52px
+  &__subtitle
+    mt 32px
+    color white
+    max-width 630px
+    fontify 15px 400 21px
+  &__form
+    mt 40px
+  &__hint
+    color white
+    fontify 15px 400 21px
+    mt 7px
+  &__btn
+    pos absolute
+    b 35px
+    r -35px    
+.about
+  mt 260px
+  padding 0 35px
+  display flex
+  pos relative
+  &__side
+    w 333px
+    mr 90px
+    pos relative
+    z-index 1
+  &__info
+    flex-grow 1
+    pos relative
+    pt 527px
+    pr 37px
+    &-img
+      pos absolute
+      l 0
+      t -60px
+      background url('/img/about.jpg') no-repeat top left
+      size 0 506px
+      transition .7s width
+      &.visible
+        w 843px
+  &__smalltitle
+    color $orange
+    fontify 15px 600 21px
+  &__title
+    mt 17px
+    font-family $officina
+    fontify 48px 400 52px
+    w 630px
+  &__text
+    mt 32px
+  &__features
+    display flex
+    justify-content space-between
+  &__feature
+    w 120px
+  &__digit
+    color $orange
+    font-family $officina
+    fontify 72px 400 48px
+    ml -5px
+    &-for
+      mt 10px
+      fontify 15px 600 21px
+    
+.capabilities
+  mt 255px
+  pos relative
+  z-index 1
+  padding 58px 35px 66px 35px
+  display flex
+  justify-content flex-end
+  &:before
+    content ""
+    pos absolute
+    z-index -1
+    l 0
+    t 0
+    bgc $orange
+    h 100%
+    w calc(100% + 65px)
+  &__img
+    pos absolute
+    l -65px
+    t -60px
+    background url('/img/capabilites.jpg') no-repeat top left
+    size 0 588px
+    transition .7s width
+    &.visible
+      w 746px
+  &__info
+    w 460px
+  &__title
+    color white
+    font-family $officina
+    fontify 48px 400 52px
+  &__list
+    mt 32px
+    pl 60px
+    pr 10px
+    counter-reset capabalitiesCounter
+  &__item
+    pos relative
+    & + &
+      mt 40px
+    &:before
+      counter-increment capabalitiesCounter
+      content counter(capabalitiesCounter) ". "
+      pos absolute
+      t 0
+      l -30px
+      color white
+      fontify 15px 600 21px
+    &:after
+      content ""
+      pos absolute
+      t 5px
+      l -56px
+      w 1px
+      h calc(100% - 5px)
+      bgc alpha(white, .25)
+    &-title
+      color white
+      fontify 15px 600 21px
+    &-text
+      color white
+      fontify 15px 400 21px
+      mt 18px
+.ourfeat
+  mt 192px
+  pos relative
+  &__title
+    font-family $officina
+    fontify 48px 400 52px
+  &__list
+    margin 105px 35px 0
+    background url('/img/ourfeat.jpg') no-repeat top left
+    background-size 100% auto
+    min-height 520px
+    display flex
+    justify-content space-between
+    align-items flex-start
+  &__item
+    w calc(100% / 3)
+    h 390px
+    pos relative
+    bgc $grey
+    padding 48px 64px
+    transition .7s background
+    & + &
+      ml 33px
+    &:first-child
+      ml -35px
+      t -65px
+    &:nth-child(2)
+      t 195px
+    &:last-child
+      mr -35px
+      t 65px
+    &-title
+      fontify 15px 600 21px
+      transition .7s color
+    &-text
+      mt 20px
+      fontify 15px 400 21px
+      transition .7s color
+    &:hover
+      bgc $orange
+      & ^[-1]-title,
+      & ^[-1]-text
+        color white
+.clients
+  mt 255px
+  pos relative
+  &__title
+    font-family $officina
+    fontify 48px 400 52px
+  &__img
+    opacity .4
+    transition .7s opacity
+    &:hover
+      opacity 1
+  &__car
+    &.swiper-container
+      mt 50px
+    .swiper-slide
+      h 85px
+      display flex
+      align-items center
+      justify-content center
+  .swiper-buttons
+    pos absolute
+    r 35px
+    t 10px
+.contacts
+  margin 193px 35px 0
+  bgc $dark
+  padding 58px 147px 69px 64px
+  pos relative
+  &__title
+    color white
+    font-family $officina
+    fontify 48px 400 52px
+  &__types
+    mt 34px
+  &__type
+    pl 27px
+    pos relative
+    &:before
+      content ""
+      pos absolute
+      l 2px
+      t 4px
+      bgc alpha(white, .1)
+      h 30px
+      w 1px
+    & + &
+      mt 39px
+    &-title
+      color white
+      fontify 15px 600 21px
+    &-text
+      mt 18px
+      color white
+      fontify 15px 400 21px
+    &-phones
+      mt 18px
+    &-phone
+      ib()
+      color white
+      fontify 15px 400 21px
+      & + &
+        ml 30px
+    &-mail
+      mt 18px
+      ib()
+      color white
+      fontify 15px 400 21px
+      border-bottom 1px solid transparent
+      transition .7s border
+      &:hover
+        border-color currentColor
+  &__form
+    mt 33px
+  &__btn
+    pos absolute
+    b -35px
+    r -181px 

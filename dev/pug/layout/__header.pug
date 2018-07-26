@@ -1,18 +1,18 @@
 header.header
-  button(type="button", data-fancybox, data-src="#feedback").btn.btn_dark.header__feedback Обратный звонок
+  button(type="button", data-fancybox, data-src="#feedcall").btn.btn_dark.header__feedback Обратный звонок
   .header__info
     a(href="tel:+73512430425").header__info-phone +7 (351) 243-04-25
     p.header__info-days Понедельник – пятница<br>с 09:00 до 17:00
   nav.header__menu
     ul.header__menu-list
       li.header__menu-item
-        a(href="#").header__menu-href.active О продукции
+        a(href="#", data-to="special").header__menu-href.js-header-to О продукции
       li.header__menu-item
-        a(href="#").header__menu-href Каталог
+        a(href="#", data-to="catalog").header__menu-href.js-header-to Каталог
       li.header__menu-item
-        a(href="#").header__menu-href О компании
+        a(href="#", data-to="about").header__menu-href.js-header-to О компании
       li.header__menu-item
-        a(href="#").header__menu-href Контакты
+        a(href="#", data-to="contacts").header__menu-href.js-header-to Контакты
   a(href="#").header__logo
     img(src="img/logo.png", alt="").header__logo-img
   span.header__logo-hint Прямые поставки грейферов ROZZI по России и странам СНГ

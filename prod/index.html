@@ -14,16 +14,16 @@
   </head>
   <body>
     <header class="header">
-      <button class="btn btn_dark header__feedback" type="button" data-fancybox data-src="#feedback">Обратный звонок</button>
+      <button class="btn btn_dark header__feedback" type="button" data-fancybox data-src="#feedcall">Обратный звонок</button>
       <div class="header__info"><a class="header__info-phone" href="tel:+73512430425">+7 (351) 243-04-25</a>
         <p class="header__info-days">Понедельник – пятница<br>с 09:00 до 17:00</p>
       </div>
       <nav class="header__menu">
         <ul class="header__menu-list">
-          <li class="header__menu-item"><a class="header__menu-href active" href="#">О продукции</a></li>
-          <li class="header__menu-item"><a class="header__menu-href" href="#">Каталог</a></li>
-          <li class="header__menu-item"><a class="header__menu-href" href="#">О компании</a></li>
-          <li class="header__menu-item"><a class="header__menu-href" href="#">Контакты</a></li>
+          <li class="header__menu-item"><a class="header__menu-href js-header-to" href="#" data-to="special">О продукции</a></li>
+          <li class="header__menu-item"><a class="header__menu-href js-header-to" href="#" data-to="catalog">Каталог</a></li>
+          <li class="header__menu-item"><a class="header__menu-href js-header-to" href="#" data-to="about">О компании</a></li>
+          <li class="header__menu-item"><a class="header__menu-href js-header-to" href="#" data-to="contacts">Контакты</a></li>
         </ul>
       </nav><a class="header__logo" href="#"><img class="header__logo-img" src="img/logo.png" alt=""></a><span class="header__logo-hint">Прямые поставки грейферов ROZZI по России и странам СНГ
         <!--button(type="button", aria-label="открыть мобильное меню").burger__button.js-burgerspan.burger__button-meat
@@ -135,27 +135,27 @@
       </section>
       <section class="catalog"><span class="catalog__smalltitle">Каталог</span>
         <h3 class="catalog__title">В ассортименте более 400 моделей грейферов под любые нужды</h3>
-        <ul class="catalog__list js-catalog-list" style="background-image: url('img/cat1.jpg')">
+        <ul class="catalog__list js-catalog-list" style="background-image: url('img/cat1.jpg')" data-default="img/cat1.jpg">
           <li class="catalog__item catalog__item_wide js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
-            <p class="catalog__item-name">Полип-грейферы для погрузки металлолома и различных материалов</p>
+            <p class="catalog__item-name"> <span>Полип-грейферы для погрузки металлолома <br>и различных материалов</span></p>
           </li>
           <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
-            <p class="catalog__item-name">Грейферы для разрушения и сортировки</p>
+            <p class="catalog__item-name"> <span>Грейферы для разрушения и сортировки</span></p>
+          </li>
+          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat2.jpg">
+            <p class="catalog__item-name"> <span>Грейферы для круглого леса и других материалов</span></p>
           </li>
           <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
-            <p class="catalog__item-name">Грейферы для круглого леса и других материалов</p>
+            <p class="catalog__item-name"> <span>Двухчелюстной грейфер для сыпучих материалов</span></p>
+          </li>
+          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat2.jpg">
+            <p class="catalog__item-name"> <span>Вилочные захваты для сельского хозяйства</span></p>
           </li>
           <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
-            <p class="catalog__item-name">Двухчелюстной грейфер для сыпучих материалов</p>
+            <p class="catalog__item-name"> <span>Гидравлические ротаторы</span></p>
           </li>
-          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
-            <p class="catalog__item-name">Вилочные захваты для сельского хозяйства</p>
-          </li>
-          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
-            <p class="catalog__item-name">Гидравлические ротаторы</p>
-          </li>
-          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
-            <p class="catalog__item-name">Электрогидравлические грейферы</p>
+          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat2.jpg">
+            <p class="catalog__item-name"> <span>Электрогидравлические грейферы</span></p>
           </li>
         </ul>
       </section>
@@ -178,25 +178,71 @@
           <div class="gallery__side-sticky"><span class="gallery__smalltitle">Галерея</span>
             <h3 class="gallery__title">Грейферы Rozzi в действии</h3>
             <ul class="gallery__catlist">
-              <li class="gallery__catitem"><a class="gallery__catitem-href" href="#" data-tab="1">Металлургия (Многочелюстные грейферы)</a></li>
-              <li class="gallery__catitem"><a class="gallery__catitem-href" href="#" data-tab="2">Порты и терминалы (Двухчелюстные грейферы)</a></li>
-              <li class="gallery__catitem"><a class="gallery__catitem-href" href="#" data-tab="3">Лесозаготовка (Грейферы для бревен)</a></li>
-              <li class="gallery__catitem"><a class="gallery__catitem-href" href="#" data-tab="4">Для демонтажа и разбора завалов</a></li>
-              <li class="gallery__catitem"><a class="gallery__catitem-href" href="#" data-tab="5">Сельское хозяйство (Вилочные грейферы)</a></li>
-              <li class="gallery__catitem"><a class="gallery__catitem-href" href="#" data-tab="6">Для манипуляторов и КМУ</a></li>
-              <li class="gallery__catitem"><a class="gallery__catitem-href" href="#" data-tab="7">Электрогидравлические грейферы</a></li>
+              <li class="gallery__catitem"><a class="gallery__catitem-href active js-gallery-item" href="#" data-tab="1">Металлургия (Многочелюстные грейферы)</a></li>
+              <li class="gallery__catitem"><a class="gallery__catitem-href js-gallery-item" href="#" data-tab="2">Порты и терминалы (Двухчелюстные грейферы)</a></li>
+              <li class="gallery__catitem"><a class="gallery__catitem-href js-gallery-item" href="#" data-tab="3">Лесозаготовка (Грейферы для бревен)</a></li>
+              <li class="gallery__catitem"><a class="gallery__catitem-href js-gallery-item" href="#" data-tab="4">Для демонтажа и разбора завалов</a></li>
+              <li class="gallery__catitem"><a class="gallery__catitem-href js-gallery-item" href="#" data-tab="5">Сельское хозяйство (Вилочные грейферы)</a></li>
+              <li class="gallery__catitem"><a class="gallery__catitem-href js-gallery-item" href="#" data-tab="6">Для манипуляторов и КМУ</a></li>
+              <li class="gallery__catitem"><a class="gallery__catitem-href js-gallery-item" href="#" data-tab="7">Электрогидравлические грейферы</a></li>
             </ul>
           </div>
         </aside>
         <div class="gallery__photos">
-          <div class="gallery__photos-tab" data-tab="1"></div>
-          <div class="gallery__photo-col">
-            <div class="gallery__photo-elem"><img src="img/gallery1.jpg"></div>
-            <div class="gallery__photo-elem"><img src="img/gallery2.jpg"></div>
+          <div class="gallery__photos-tab active js-gallery-tab" data-tab="1">
+            <div class="gallery__photo-col">
+              <div class="gallery__photo-elem"><img src="img/gallery1.jpg"></div>
+              <div class="gallery__photo-elem"><img src="img/gallery2.jpg"></div>
+            </div>
+            <div class="gallery__photo-col gallery__photo-col_wide">
+              <div class="gallery__photo-elem"><img src="img/gallery3.jpg"></div>
+              <div class="gallery__photo-elem"><img src="img/gallery4.jpg"></div>
+            </div>
           </div>
-          <div class="gallery__photo-col gallery__photo-col_wide">
-            <div class="gallery__photo-elem"><img src="img/gallery3.jpg"></div>
-            <div class="gallery__photo-elem"><img src="img/gallery4.jpg"></div>
+          <div class="gallery__photos-tab js-gallery-tab" data-tab="2">
+            <div class="gallery__photo-col">
+              <div class="gallery__photo-elem"><img src="img/gallery1.jpg"></div>
+            </div>
+            <div class="gallery__photo-col gallery__photo-col_wide">
+              <div class="gallery__photo-elem"><img src="img/gallery3.jpg"></div>
+            </div>
+          </div>
+          <div class="gallery__photos-tab js-gallery-tab" data-tab="3">
+            <div class="gallery__photo-col">
+              <div class="gallery__photo-elem"><img src="img/gallery2.jpg"></div>
+            </div>
+            <div class="gallery__photo-col gallery__photo-col_wide">
+              <div class="gallery__photo-elem"><img src="img/gallery4.jpg"></div>
+            </div>
+          </div>
+          <div class="gallery__photos-tab js-gallery-tab" data-tab="4">
+            <div class="gallery__photo-col">
+              <div class="gallery__photo-elem"><img src="img/gallery4.jpg"></div>
+            </div>
+          </div>
+          <div class="gallery__photos-tab js-gallery-tab" data-tab="5">
+            <div class="gallery__photo-col">
+              <div class="gallery__photo-elem"><img src="img/gallery2.jpg"></div>
+            </div>
+            <div class="gallery__photo-col gallery__photo-col_wide">
+              <div class="gallery__photo-elem"><img src="img/gallery4.jpg"></div>
+            </div>
+          </div>
+          <div class="gallery__photos-tab js-gallery-tab" data-tab="6">
+            <div class="gallery__photo-col">
+              <div class="gallery__photo-elem"><img src="img/gallery2.jpg"></div>
+            </div>
+            <div class="gallery__photo-col gallery__photo-col_wide">
+              <div class="gallery__photo-elem"><img src="img/gallery4.jpg"></div>
+            </div>
+          </div>
+          <div class="gallery__photos-tab js-gallery-tab" data-tab="7">
+            <div class="gallery__photo-col">
+              <div class="gallery__photo-elem"><img src="img/gallery2.jpg"></div>
+            </div>
+            <div class="gallery__photo-col gallery__photo-col_wide">
+              <div class="gallery__photo-elem"><img src="img/gallery4.jpg"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -204,52 +250,52 @@
         <h3 class="help__title">Поможем с выбором</h3>
         <p class="help__subtitle">Оставьте заявку, мы свяжемся с Вами в ближайшее время. Для наиболее правильного подбора необходимого грузозахватного оборудования просим ответить на вопросы *</p>
         <form class="help__form">
-          <div class="common__col">
-            <div class="common__row">
-              <label class="common__label">Состав заявки</label>
-              <textarea class="common__textarea"></textarea>
-            </div>
-            <div class="common__row">
-              <p class="help__hint">* – Укажите модель подходящего грейфера, или, если вы еще не определились, по возможности напишите: тип грейфера (двухчелюстной – с зубом/без, или многочелюстной – тип лепестка:  S, SL, P, PA), перегружаемый материал  (удельный вес),  для какой модели техники, максимально допустимый вес грейфера с грузом, для электрогидравлических  укажите грузоподъемность крана.</p>
-            </div>
-          </div>
-          <div class="common__col">
-            <div class="common__row">
-              <div class="common__col">
-                <label class="common__label">Ваше имя*</label>
-                <input class="common__inp" type="text" data-req="req">
-              </div>
-              <div class="common__col">
-                <label class="common__label">Телефон*</label>
-                <input class="common__inp js-phone" type="text" data-req="req">
+          <div class="common__row common__row_flex">
+            <div class="common__col">
+              <div class="common__row">
+                <label class="common__label">Состав заявки</label>
+                <textarea class="common__textarea"></textarea>
+                <p class="help__hint">* – Укажите модель подходящего грейфера, или, если вы еще не определились, по возможности напишите: тип грейфера (двухчелюстной – с зубом/без, или многочелюстной – тип лепестка:  S, SL, P, PA), перегружаемый материал  (удельный вес),  для какой модели техники, максимально допустимый вес грейфера с грузом, для электрогидравлических  укажите грузоподъемность крана.</p>
               </div>
             </div>
-            <div class="common__row">
-              <label class="common__label">Электронная почта</label>
-              <input class="common__inp" type="text" data-req="req" data-type="email">
-            </div>
-            <div class="common__row">
-              <div class="common__col">
-                <div class="common__fileover">
-                  <input class="common__file js-common-fileinput" type="file" name="" data-req="req" data-type="file" id="file1">
-                  <label class="common__filename js-common-file" for="file1" data-default="Прикрепить файл">Прикрепить файл</label>
-                  <button class="common__filedelete js-common-filedelete" type="button"></button>
+            <div class="common__col">
+              <div class="common__row common__row_flex">
+                <div class="common__col">
+                  <label class="common__label">Ваше имя*</label>
+                  <input class="common__inp" type="text" data-req="req">
+                </div>
+                <div class="common__col">
+                  <label class="common__label">Телефон*</label>
+                  <input class="common__inp js-phone" type="text" data-req="req">
                 </div>
               </div>
-              <div class="common__col">
-                <div class="fakecheckbox">
-                  <input class="fakecheckbox__truecheck" type="checkbox" value="" name="agreement" checked id="agreement">
-                  <label class="fakecheckbox__label" for="agreement">Даю согласие на обработку <a href="#">персональных данных</a></label>
+              <div class="common__row">
+                <label class="common__label">Электронная почта</label>
+                <input class="common__inp" type="text">
+              </div>
+              <div class="common__row common__row_flex">
+                <div class="common__col">
+                  <div class="common__fileover">
+                    <input class="common__file js-common-fileinput" type="file" name="" id="file1">
+                    <label class="common__filename js-common-file" for="file1" data-default="Прикрепить файл">Прикрепить файл</label>
+                    <button class="common__filedelete js-common-filedelete" type="button"></button>
+                  </div>
+                </div>
+                <div class="common__col">
+                  <div class="fakecheckbox">
+                    <input class="fakecheckbox__truecheck" type="checkbox" value="" name="agreement" checked id="agreement">
+                    <label class="fakecheckbox__label" for="agreement">Даю согласие на обработку <a href="#">персональных данных</a></label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <button class="btn btn_red help__btn" type="submit">Отправить</button>
+          <button class="btn btn_red btn_small help__btn" type="submit">Отправить</button>
         </form>
       </section>
       <section class="about">
         <aside class="about__side"><span class="about__smalltitle">О компании</span>
-          <h3 class="about__title">«Евраз-Трейд» – официальный поставщик грейферов Rozzi в России и СНГ</h3>
+          <h3 class="about__title">«Евраз-Трейд» – официальный поставщик грейферов Rozzi в&nbsp;России и СНГ</h3>
           <div class="about__text">
             <p>С нами выгодно!</p>
             <p>Наша компания более 17 лет успешно поставляет импортное оборудование различных брендов, узлы, агрегаты, запчасти, расходные материалы к различным видам импортной спецтехнике и для различного технологического оборудования.</p>
@@ -273,8 +319,8 @@
           </ul>
         </div>
       </section>
-      <section class="capabilities"><span class="capabilities-img js-scroll-imgover"></span>
-        <aside class="capabilities-info">
+      <section class="capabilities"><span class="capabilities__img js-scroll-imgover"></span>
+        <aside class="capabilities__info">
           <p class="capabilities__title">Наши возможности</p>
           <ol class="capabilities__list">
             <li class="capabilities__item">
@@ -295,15 +341,15 @@
       <section class="ourfeat">
         <p class="ourfeat__title">Наши преимущества</p>
         <ul class="ourfeat__list">
-          <li class="ourfeat__item">
+          <li class="ourfeat__item js-ourfeat-item" data-koef=".12">
             <p class="ourfeat__item-title">Прямые поставки от производителя</p>
             <p class="ourfeat__item-text">Осуществляем прямые поставки с завода-изготовителя в Италии, индивидуально прорабатывая маршрут и транспортную логистику под каждую новую перевозку, что позволяет найти наиболее надежные и менее затратные варианты.</p>
           </li>
-          <li class="ourfeat__item">
+          <li class="ourfeat__item js-ourfeat-item" data-koef="-.2">
             <p class="ourfeat__item-title">Таможенное сопровождение сделки</p>
             <p class="ourfeat__item-text">Полностью берем на себя все мероприятия по оформлению импортной продукции и подаче таможенных деклараций на таможенные посты Челябинска, либо на таможенные посты по месту нахождения заказчика, что позволяет полностью контролировать правильность расчета и уплаты всех необходимых таможенных платежей и пошлин.</p>
           </li>
-          <li class="ourfeat__item">
+          <li class="ourfeat__item js-ourfeat-item" data-koef="-.05">
             <p class="ourfeat__item-title">Доставка по всей территории РФ и&nbsp;странам СНГ</p>
             <p class="ourfeat__item-text">Доставка товара до заказчика осуществляется, любым удобным для него способом по договоренности, в пределах нашего региона мы бесплатно доставим груз на любой склад транспортной компании для дальнейшей межтерминальной перевозки или доставим груз до «дверей» в Вашем городе за умеренную плату.</p>
           </li>
@@ -319,63 +365,243 @@
             <div class="swiper-slide"><img class="clients__img" src="img/clients4.png"></div>
             <div class="swiper-slide"><img class="clients__img" src="img/clients5.png"></div>
             <div class="swiper-slide"><img class="clients__img" src="img/clients6.png"></div>
+            <div class="swiper-slide"><img class="clients__img" src="img/clients3.png"></div>
+            <div class="swiper-slide"><img class="clients__img" src="img/clients4.png"></div>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+        </div>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev swiper-button-prev_dark"></div>
+          <div class="swiper-button-next swiper-button-next_dark"></div>
         </div>
       </section>
       <section class="contacts">
-        <div class="common__col">
-          <p class="contacts__title">Контакты</p>
-          <div class="contacts-type">
-            <p class="contacts__type-title">Адрес</p>
-            <p class="contacts__type-text">454007, город Челябинск, улица Савина, дом 8а, офис 2</p>
-          </div>
-          <div class="contacts-type">
-            <p class="contacts__type-title">Телефоны</p>
-            <div class="contacts__type-phones"><a class="contacts__type-phone" href="tel:+73512430425">+7 (351) 243-04-25</a><a class="contacts__type-phone" href="tel:+73512432112">+7 (351) 243-21-12</a></div>
-          </div>
-          <div class="contacts-type">
-            <p class="contacts__type-title">Электронная почта</p><a class="contacts__type-mail" href="mailto:et74@bk.ru">et74@bk.ru</a>
-          </div>
-        </div>
-        <div class="common__col">
-          <p class="contacts__title">Связаться с нами</p>
-          <form class="contacts__form">
-            <div class="common__row">
-              <label class="common__label">Текст сообщения</label>
-              <textarea class="common__textarea"></textarea>
-            </div>
-            <div class="common__row">
-              <div class="common__col">
-                <label class="common__label">Ваше имя*</label>
-                <input class="common__inp" type="text" data-req="req">
+        <div class="common__row common__row_flex">
+          <div class="common__col">
+            <p class="contacts__title">Контакты</p>
+            <div class="contacts__types">
+              <div class="contacts__type">
+                <p class="contacts__type-title">Адрес</p>
+                <p class="contacts__type-text">454007, город Челябинск, улица Савина, дом 8а, офис 2</p>
               </div>
-              <div class="common__col">
-                <label class="common__label">Телефон*</label>
-                <input class="common__inp js-phone" type="text" data-req="req">
+              <div class="contacts__type">
+                <p class="contacts__type-title">Телефоны</p>
+                <div class="contacts__type-phones"><a class="contacts__type-phone" href="tel:+73512430425">+7 (351) 243-04-25</a><a class="contacts__type-phone" href="tel:+73512432112">+7 (351) 243-21-12</a></div>
+              </div>
+              <div class="contacts__type">
+                <p class="contacts__type-title">Электронная почта</p><a class="contacts__type-mail" href="mailto:et74@bk.ru">et74@bk.ru</a>
               </div>
             </div>
-            <div class="common__row">
-              <label class="common__label">Электронная почта</label>
-              <input class="common__inp" type="text" data-req="req" data-type="email">
-            </div>
-            <div class="common__row">
-              <div class="fakecheckbox">
-                <input class="fakecheckbox__truecheck" type="checkbox" value="" name="agreement" checked id="agreement1">
-                <label class="fakecheckbox__label" for="agreement1">Даю согласие на обработку <a href="#">персональных данных</a></label>
+          </div>
+          <div class="common__col">
+            <p class="contacts__title">Связаться с нами</p>
+            <form class="contacts__form">
+              <div class="common__row">
+                <label class="common__label">Текст сообщения</label>
+                <textarea class="common__textarea"></textarea>
               </div>
-            </div>
-            <button class="btn btn_red help__btn" type="submit">Отправить  </button>
-          </form>
+              <div class="common__row common__row_flex">
+                <div class="common__col">
+                  <label class="common__label">Ваше имя*</label>
+                  <input class="common__inp" type="text" data-req="req">
+                </div>
+                <div class="common__col">
+                  <label class="common__label">Телефон*</label>
+                  <input class="common__inp js-phone" type="text" data-req="req">
+                </div>
+              </div>
+              <div class="common__row">
+                <label class="common__label">Электронная почта</label>
+                <input class="common__inp" type="text" data-req="req" data-type="email">
+              </div>
+              <div class="common__row">
+                <div class="fakecheckbox">
+                  <input class="fakecheckbox__truecheck" type="checkbox" value="" name="agreement" checked id="agreement1">
+                  <label class="fakecheckbox__label" for="agreement1">Даю согласие на обработку <a href="#">персональных данных</a></label>
+                </div>
+              </div>
+              <button class="btn btn_red btn_small contacts__btn" type="submit">Отправить  </button>
+            </form>
+          </div>
         </div>
       </section>
     </section>
     <footer class="footer">
       <aside class="footer__left"><a class="footer__logoover" href="#"><img class="footer__logo" src="img/logo.png"></a>
         <p class="footer__copy">© «Евраз-Трейд», 2018</p>
-      </aside><a class="footer__dextra" href="https://www.dextra.ru/" target="_blank"><span>dextra</span>Разработка<br>сайта</a>
+      </aside><a class="footer__dextra" href="https://www.dextra.ru/" target="_blank"><span></span>Разработка<br>сайта</a>
     </footer>
+    <div class="hidden-block">
+      <div class="popup" id="item">
+        <div class="popup-scrollable js-scrollable">
+          <section class="card__over">
+            <aside class="card__imgover"><img class="card__img" src="img/card1.jpg"></aside>
+            <div class="card__info text">
+              <h3 class="card__title">Полип-грейферы Rozzi</h3>
+              <p>Грейферы гидравлические, многочелюстные применяются в качестве навесного грузозахватного оборудования на перегружателях, экскаваторах, манипуляторах, КМУ различных моделей и брендов. Могут поставляться отдельно, а так же в сборе с ротатором (для поворота на 360˚) и подвеской соответствующей размерам стрелы.</p>
+              <p>Предназначены для погрузки, перевалки сыпучих материалов различных материалов: металлолом, кузова машин, городской мусор, промышленные отходы, камни, бумага, картон, пластик, дерево, б/у шины. </p>
+              <p>В зависимости от  поставленной задачи, перегружаемого материала (удельного веса , размера) и модели техники (вес, грузоподъемность), подбираются  оптимальные модели грейферов, более мощные для тяжелых материалов и облегченные для легких, а так же необходимый тип лепестка: P-PA-S-SL.</p>
+              <div class="card__download">
+                <p class="card__download-type">PDF, 1.2 Мб</p><a class="card__download-href" href="#">Скачать каталог многочелюстных грейферов</a>
+                <button class="btn btn_red card__btn" type="button" data-fancybox data-src="#feedback">Оставить заявку</button>
+              </div>
+              <h3>Особенности грейферов Rozzi</h3>
+              <ul>
+                <li>Грейферы Rozzi производятся в соответствии с Директивой Евросоюза 2006/42/CE.</li>
+                <li>Весь процесс сварки, а так же сварщики аттестованы независимым внешним органом.</li>
+                <li>Форма лепестков сконструирована таким образом, чтобы захватывать, как можно больше материала, при этом обеспечивая надежность захвата. </li>
+                <li>Поставляются на такие ведущие Европейские предприятия изготовители техники как: SENNEBOGEN Maschinenfabrik GmbH, Mantsinen, Liebherr, Terex-Fuchs GmbH, Solmec S.p.A, TABARELLI S.p.A, COLMAR S.p.A, CATERPILLAR, KOMATSU, HITACHI, JCB, ATLAS, FASSI, PENZ, BERGER Palfinger, Marchesi, Epsilon, HMF, Cranab, Kesla, Hiab, LIV, Effer, Cormach, PM, Hyva.</li>
+              </ul>
+              <h3>Материалы изготовления</h3>
+              <p>Для изготовления используются следующие материалы:</p>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Каркас</td>
+                    <td>Сталь S355 J2 + N</td>
+                  </tr>
+                  <tr>
+                    <td>Зуб / Пластина внутри зуба</td>
+                    <td>Сталь Hardox 400</td>
+                  </tr>
+                  <tr>
+                    <td>Наконечник</td>
+                    <td>Закаленная борсодержащая сталь</td>
+                  </tr>
+                  <tr>
+                    <td>Пальцы</td>
+                    <td>Сталь 39NiCrMo3, закаленные + поверхность HRC=55</td>
+                  </tr>
+                  <tr>
+                    <td>Втулки</td>
+                    <td>Сталь S355, нитроцементации HRC =60/65</td>
+                  </tr>
+                  <tr>
+                    <td>Валы</td>
+                    <td>Сталь 39NiCrMo3 + поверхностное хромирование</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3>Качество изделий</h3>
+              <p>Перед отправкой с завода Rozzi, все новое оборудование подлежит следующему контролю:</p>
+              <ul>
+                <li>проверка функционирования,</li>
+                <li>проверка точности размеров,</li>
+                <li>проверка качества сварных швов,</li>
+                <li>проверка всех уплотнений, соединений / уплотнения шлангов.</li>
+              </ul>
+              <h3>Примеры комплектаций</h3>
+              <p>Полип-грейферы Rozzi S.p.A. могут быть установлены любые виды и модели техники, включая модели крупнейших Европейских производителей:</p>
+              <ul class="card__examples">
+                <li class="card__example"><img class="card__example-img" src="img/card-ex1.jpg">
+                  <p class="card__example-name">На манипуляторе без ротатора</p>
+                </li>
+                <li class="card__example"><img class="card__example-img" src="img/card-ex2.jpg">
+                  <p class="card__example-name">На перегружателе без ротатора</p>
+                </li>
+                <li class="card__example"><img class="card__example-img" src="img/card-ex3.jpg">
+                  <p class="card__example-name">С ротатором</p>
+                </li>
+                <li class="card__example"><img class="card__example-img" src="img/card-ex4.jpg">
+                  <p class="card__example-name">С ротатором</p>
+                </li>
+              </ul>
+              <div class="card__imgs">
+                <h3>Грейферы Rozzi в действии</h3>
+                <div class="card__car js-card-imgs swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="card__car-img" src="img/about.jpg"></div>
+                  </div>
+                </div>
+                <div class="swiper-buttons">
+                  <div class="swiper-button-prev swiper-button-prev_dark"></div>
+                  <div class="swiper-button-next swiper-button-next_dark"></div>
+                </div>
+              </div>
+              <div class="card__download">
+                <p class="card__download-type">PDF, 1.2 Мб</p><a class="card__download-href" href="#">Скачать каталог многочелюстных грейферов</a>
+                <button class="btn btn_red card__btn" type="button" data-fancybox data-src="#feedback">Оставить заявку</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="popup" id="feedcall">
+        <form class="popup__form">
+          <div class="common__row common__row_flex">
+            <div class="common__col">
+              <p class="popup__title">Обратный звонок</p>
+              <p class="popup__subtitle">Оставьте заявку, наш менеджер свяжется с вами и окажет полную консультацию по любым интересующим вас вопросам.</p>
+            </div>
+            <div class="common__col">
+              <div class="common__row common__row_flex">
+                <div class="common__col">
+                  <label class="common__label">Ваше имя*</label>
+                  <input class="common__inp" type="text" data-req="req">
+                </div>
+                <div class="common__col">
+                  <label class="common__label">Телефон*</label>
+                  <input class="common__inp js-phone" type="text" data-req="req">
+                </div>
+              </div>
+              <div class="common__row">
+                <div class="fakecheckbox">
+                  <input class="fakecheckbox__truecheck" type="checkbox" value="" name="agreement" checked id="agreement2">
+                  <label class="fakecheckbox__label" for="agreement2">Даю согласие на обработку <a href="#">персональных данных</a></label>
+                </div>
+              </div>
+              <button class="btn btn_red btn_small contacts__btn" type="submit">Отправить </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="popup" id="feedback">
+        <p class="popup__title">Оставить заявку</p>
+        <p class="popup__subtitle">Оставьте заявку, мы свяжемся с Вами в ближайшее время. Для наиболее правильного подбора необходимого грузозахватного оборудования просим ответить на вопросы * </p>
+        <form class="popup__form popup__form_top">
+          <div class="common__row common__row_flex">
+            <div class="common__col">
+              <div class="common__row">
+                <label class="common__label">Состав заявки</label>
+                <textarea class="common__textarea"></textarea>
+                <p class="help__hint">* – Укажите модель подходящего грейфера, или, если вы еще не определились, по возможности напишите: тип грейфера (двухчелюстной – с зубом/без, или многочелюстной – тип лепестка:  S, SL, P, PA), перегружаемый материал  (удельный вес),  для какой модели техники, максимально допустимый вес грейфера с грузом, для электрогидравлических  укажите грузоподъемность крана.</p>
+              </div>
+            </div>
+            <div class="common__col">
+              <div class="common__row common__row_flex">
+                <div class="common__col">
+                  <label class="common__label">Ваше имя*</label>
+                  <input class="common__inp" type="text" data-req="req">
+                </div>
+                <div class="common__col">
+                  <label class="common__label">Телефон*</label>
+                  <input class="common__inp js-phone" type="text" data-req="req">
+                </div>
+              </div>
+              <div class="common__row">
+                <label class="common__label">Электронная почта</label>
+                <input class="common__inp" type="text">
+              </div>
+              <div class="common__row common__row_flex">
+                <div class="common__col">
+                  <div class="common__fileover">
+                    <input class="common__file js-common-fileinput" type="file" name="" id="file1">
+                    <label class="common__filename js-common-file" for="file1" data-default="Прикрепить файл">Прикрепить файл</label>
+                    <button class="common__filedelete js-common-filedelete" type="button"></button>
+                  </div>
+                </div>
+                <div class="common__col">
+                  <div class="fakecheckbox">
+                    <input class="fakecheckbox__truecheck" type="checkbox" value="" name="agreement" checked id="agreement3">
+                    <label class="fakecheckbox__label" for="agreement3">Даю согласие на обработку <a href="#">персональных данных</a></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn_red btn_small help__btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
     <script type="text/javascript" src="static/js/vendor.js"></script>
     <script type="text/javascript" src="static/js/script.js"></script>
     <script type="text/javascript" src="static/js/dev.js"></script>

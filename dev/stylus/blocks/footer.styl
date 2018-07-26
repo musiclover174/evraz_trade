@@ -1,46 +1,145 @@
 .footer
-  color white
-  fontify 14px 700 21px
+  mt 49px
+  mb 52px
+  padding 0 65px
   display flex
   justify-content space-between
-  align-items flex-start
-  &_inner
-    pos relative
-    b 0
-    l 0
-    r auto
+  align-items center
+  &__left
     display flex
-    justify-content space-between
-    align-items flex-start
-    mt 85px
-    @media $PortraitMedium
-      flex-direction column
-      mt 50px
+    align-items center
+  &__logoover
+    ib()
+    mr 31px
+  &__logo
+    filter invert(100%)
   &__copy
-    color inherit
-    fontify 12px 700 21px
+    ib()
+    fontify 15px 600 21px
   &__dextra
-    color silver
+    color black
     font-family Verdana, Geneva, sans-serif
     fontify 9px 400 14px
     text-transform uppercase
     letter-spacing .18em
     pos relative
-    @media $PortraitMedium
-      ml 85px
-      mt 10px
     span
+      db()
       pos absolute
       t 2px
-      r calc(100% + 10px)
-      bgc rgba(0, 0, 0, .2)
-      color white
-      font-family Arial
-      fontify 12px 900 21px
-      text-transform uppercase
-      letter-spacing .1em
-      padding 0 6px
-      border-radius 3px
+      r calc(100% + 9px)
+      size 71px 21px
+      background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAJCAMAAABZlb9eAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAgL9QEN9AMGCf7yCPz69wvspXdQAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxIAAAsSAdLdfvwAAADYSURBVCjPZVFXlsQwCMPYuJCm+592Kdm8yYw+YsVGIIAKDFzJEBQgaoLun0HEeddvJpMCgpkKLkuDOzUY6xD7czbLgpSyuXiVXT0NUQWOFBcP1n+a2LHy2d84TnbdHbLA2B7F4Razcvgxz37zLW5nVG44KvZHfKeN/iP0hLRvseNyOu1QecTiLj5sV2ikfomvXlU3yvbl6eKCvHpuqkNyNu+ed9heNgizJXCFsEAHJTWE6WLF0/jvwErsRrTR9HhfBSV18eDTJ84xu8Hpf2cr0NmaXuxZL+5/APkKRRf72YAAAAAASUVORK5CYII=")
+      background-repeat no-repeat
+      background-position center
+      bgc $dark
       transition .7s background
     &:hover span
-      bgc $green
+      bgc $orange
+      
+      
+.popup
+  w calc(100% - 200px)
+  bgc $grey
+  padding 58px 147px 59px 63px
+  &__title
+    color black
+    font-family $officina
+    fontify 48px 400 52px
+  &__subtitle
+    color black
+    mt 32px
+    max-width 630px
+    fontify 15px 400 21px
+  &__form
+    &_top
+      mt 40px
+    .common__label
+      opacity .5
+    .common__label,
+    .help__hint,
+    .common__filename,
+    .fakecheckbox__label,
+    .fakecheckbox__label a:not([class])
+      color black
+    .fakecheckbox__label a:not([class])
+      border-bottom 2px solid $orange
+      transition .7s border
+      &:hover
+        border-color transparent
+    .common__filename:before
+      filter invert(100%)
+    .fakecheckbox__label:before
+      border-color black
+  &#item
+    //max-height 70vh
+    overflow auto
+    padding 0
+    bgc transparent
+
+.card
+  &__over
+    display flex
+  &__imgover
+    w 368px
+    mr 59px
+  &__info
+    flex-grow 1
+    mt -8px
+    max-width 698px
+  &__title
+    font-family $officina
+    fontify 48px 400 52px
+    mb 32px
+  &__download
+    mt 22px
+    pos relative
+    z-index 1
+    pl 65px
+    pb 7px
+    h 170px
+    w 535px
+    display flex
+    flex-direction column
+    justify-content center
+    align-items flex-start
+    &:before
+      content ""
+      pos absolute
+      z-index -1
+      l 0
+      t 0
+      h 100%
+      w 100%
+      bgc $grey
+    &-type
+      color $orange
+      fontify 12px 600 21px
+    &-href
+      color black
+      fontify 15px 600 21px
+      border-bottom 2px solid $orange
+      transition .7s border
+      &:hover
+        border-color transparent
+  &__btn
+    pos absolute
+    t 50%
+    r -35px
+    mt -58px
+  &__examples
+    mt 46px
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+    mb -34px
+  &__example
+    w calc(50% - 16px)
+    mb 34px
+    &-img
+      w 100%
+    &-name
+      fontify 15px 400 21px
+      mt 10px
+  &__imgs
+    mt 69px

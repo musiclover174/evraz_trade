@@ -71,12 +71,12 @@
     }, 10);
   }
 	
-  window.animation.visChecker = (el) => {
+  window.animation.visChecker = (el, koef = .35) => {
     let rect = el.getBoundingClientRect()
     return (
       //rect.top >= 0 &&
       //rect.left >= 0 &&
-      rect.bottom - el.offsetHeight * .35 <= (window.innerHeight || document.documentElement.clientHeight) && 
+      rect.bottom - el.offsetHeight * koef <= (window.innerHeight || document.documentElement.clientHeight) && 
       rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
     )
   }
@@ -117,8 +117,8 @@
                 path = fileInp.value.split('\\'),
                 pathName = path[path.length - 1].split('');
             
-            pathName.length >= 30 ? 
-              pathName = pathName.slice(0, 28).join('') + '...' :
+            pathName.length >= 20 ? 
+              pathName = pathName.slice(0, 18).join('') + '...' :
               pathName = pathName.join('')
             
             el.textContent = pathName;
@@ -237,11 +237,66 @@
           nextEl: '.js-special .swiper-button-next',
           prevEl: '.js-special .swiper-button-prev',
         }
-        /*breakpoints: {
-          960: {
-            autoHeight: true
+      })
+    },
+    
+    gallery: () => {
+      const galTabs = document.querySelectorAll('.js-gallery-tab'),
+            galItems = document.querySelectorAll('.js-gallery-item')
+            
+      let sidebar
+      
+      if (document.querySelector('.js-gallery-sticky')) {
+        sidebar = new StickySidebar('.js-gallery-sticky',{
+          containerSelector: '.gallery',
+          innerWrapperSelector: '.gallery__side-sticky',
+          topSpacing: 20,
+          bottomSpacing: 0
+        });
+      }
+      
+      for (let galItem of galItems) {
+        galItem.addEventListener('click', (e) => {
+          if (galItem.classList.contains('active')) {
+            e.preventDefault()
+            return
           }
-        }*/
+          
+          const tabId = galItem.getAttribute('data-tab'),
+                curTab = document.querySelector('.js-gallery-tab.active'),
+                newTab = document.querySelector(`.js-gallery-tab[data-tab="${tabId}"]`)
+          
+          document.querySelector('.js-gallery-item.active').classList.remove('active')
+          galItem.classList.add('active')
+          
+          window.animation.fadeOut(curTab, 200, () => {
+            curTab.classList.remove('active')
+            window.animation.fadeIn(newTab, 200, () => {
+              newTab.classList.add('active')
+              sidebar.updateSticky()
+            }, 'flex')
+          })
+          
+          e.preventDefault()
+        })
+      }
+      
+    },
+    
+    catalog: () => {
+      const catList = document.querySelector('.js-catalog-list'),
+            catItems = document.querySelectorAll('.js-catalog-elem')
+      
+      for (let catItem of catItems) {
+        catItem.addEventListener('mouseover', () => {
+          const dataImg = catItem.getAttribute('data-img')
+          catList.style.backgroundImage = `url(${dataImg})`
+        })
+      }
+      
+      catList.addEventListener('mouseout', () => {
+        const dataDefault = catList.getAttribute('data-default')
+        catList.style.backgroundImage = `url(${dataDefault})`
       })
     },
     
@@ -270,12 +325,46 @@
       })
     },
     
+    ourfeat: () => {
+      const featElems = document.querySelectorAll('.js-ourfeat-item')
+      
+      featElems.forEach(item => item.setAttribute('data-top', parseInt(getComputedStyle(item)['top'])))
+      
+      window.addEventListener('scroll', () => {
+        featElems.forEach(item => {
+          const rect = item.getBoundingClientRect(),
+                diff = rect.bottom - item.offsetHeight - (window.innerHeight || document.documentElement.clientHeight),
+                dataKoef = item.getAttribute('data-koef'),
+                dataTop = item.getAttribute('data-top')
+          
+          if (diff <= 0 && (rect.top + item.offsetHeight >= 0)) {
+            item.style.top = dataTop - diff * dataKoef + 'px'
+          }
+        })
+      })
+    },
+    
+    clients: () => {
+      const bannerSwiper = new Swiper ('.js-clients', {
+        loop: false,
+        speed: 800,
+        slidesPerView: 6,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: '.js-clients ~ .swiper-buttons .swiper-button-next',
+          prevEl: '.js-clients ~ .swiper-buttons .swiper-button-prev',
+        }
+      })
+    },
+    
     init: function () {
 
       const burgerEl = document.querySelector('.js-burger'),
             html = document.querySelector('html'),
             elemsToCheck = ['.news__grid_page .news__elem-imgover', '.js-scroll-imgover', '.about__steps-elem'],
-            shaveElems = document.querySelectorAll('.js-shave')
+            shaveElems = document.querySelectorAll('.js-shave'),
+            headerEl = document.querySelector('.header'),
+            headerMenuEls = document.querySelectorAll('.js-header-to')
       
       /*burgerEl.addEventListener('click', (e) => {
         html.classList.toggle('burgeropen')
@@ -293,14 +382,21 @@
       if (document.querySelector('.js-banner')) this.banner()
       
       if (document.querySelector('.js-special')) this.specials()
-
-      if (document.querySelector('.js-aside-sticky')) {
-        const sidebar = new StickySidebar('.js-aside-sticky',{
-          containerSelector: '.page__withside',
-          innerWrapperSelector: '.page__aside-sticky',
-          topSpacing: 20,
-          bottomSpacing: 0
-        });
+      
+      if (document.querySelector('.js-catalog-elem')) this.catalog()
+      
+      if (document.querySelector('.js-gallery-item')) this.gallery()
+      
+      if (document.querySelector('.js-ourfeat-item')) this.ourfeat()
+      
+      if (document.querySelector('.js-clients')) this.clients()
+      
+      for (let headerMenuEl of headerMenuEls) {
+        headerMenuEl.addEventListener('click', (e) => {
+          const dataTo = headerMenuEl.getAttribute('data-to')
+          window.animation.scrollTo(document.querySelector(`.${dataTo}`).offsetTop - headerEl.offsetHeight - 40, 1000)
+          e.preventDefault()
+        })
       }
       
       window.addEventListener('resize', () => {
@@ -310,6 +406,17 @@
       })
       
       window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          headerEl.classList.add('fixed_ready')
+        } else {
+          headerEl.classList.remove('fixed_ready')
+        }
+        if (window.pageYOffset > 500) {
+          headerEl.classList.add('fixed')
+        } else {
+          headerEl.classList.remove('fixed')
+        }
+        
         elemsToCheck.forEach(item => {
           document.querySelectorAll(item).forEach(elem => {
             if (window.animation.visChecker(elem)) {
@@ -324,7 +431,13 @@
         shave(shaveElem, shaveHeight)
       }
 			
-      $('[data-fancybox]').fancybox()
+      $('[data-fancybox]').fancybox({
+        i18n: {
+          en: {
+            CLOSE: "Закрыть"
+          }
+        }
+      })
 
       let eventScroll = new Event('scroll')
       window.dispatchEvent(eventScroll)

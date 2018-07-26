@@ -69,21 +69,28 @@ html
       section.catalog
         span.catalog__smalltitle Каталог
         h3.catalog__title В ассортименте более 400 моделей грейферов под любые нужды
-        ul(style="background-image: url('img/cat1.jpg')").catalog__list.js-catalog-list
+        ul(style="background-image: url('img/cat1.jpg')", data-default="img/cat1.jpg").catalog__list.js-catalog-list
           li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.catalog__item_wide.js-catalog-elem
-            p.catalog__item-name Полип-грейферы для погрузки металлолома и различных материалов
+            p.catalog__item-name 
+              span Полип-грейферы для погрузки металлолома <br>и различных материалов
           li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
-            p.catalog__item-name Грейферы для разрушения и сортировки
+            p.catalog__item-name 
+              span Грейферы для разрушения и сортировки
+          li(data-fancybox, data-src="#item", data-img="img/cat2.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name 
+              span Грейферы для круглого леса и других материалов
           li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
-            p.catalog__item-name Грейферы для круглого леса и других материалов
+            p.catalog__item-name 
+              span Двухчелюстной грейфер для сыпучих материалов
+          li(data-fancybox, data-src="#item", data-img="img/cat2.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name 
+              span Вилочные захваты для сельского хозяйства
           li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
-            p.catalog__item-name Двухчелюстной грейфер для сыпучих материалов
-          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
-            p.catalog__item-name Вилочные захваты для сельского хозяйства
-          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
-            p.catalog__item-name Гидравлические ротаторы
-          li(data-fancybox, data-src="#item", data-img="img/cat1.jpg").catalog__item.js-catalog-elem
-            p.catalog__item-name Электрогидравлические грейферы
+            p.catalog__item-name 
+              span Гидравлические ротаторы
+          li(data-fancybox, data-src="#item", data-img="img/cat2.jpg").catalog__item.js-catalog-elem
+            p.catalog__item-name 
+              span Электрогидравлические грейферы
       section.catalog__official
         .catalog__official-content
           h3.catalog__official-title Официальные каталоги Rozzi
@@ -102,68 +109,107 @@ html
             h3.gallery__title Грейферы Rozzi в действии
             ul.gallery__catlist
               li.gallery__catitem
-                a(href="#", data-tab="1").gallery__catitem-href Металлургия (Многочелюстные грейферы)
+                a(href="#", data-tab="1").gallery__catitem-href.active.js-gallery-item Металлургия (Многочелюстные грейферы)
               li.gallery__catitem
-                a(href="#", data-tab="2").gallery__catitem-href Порты и терминалы (Двухчелюстные грейферы)
+                a(href="#", data-tab="2").gallery__catitem-href.js-gallery-item Порты и терминалы (Двухчелюстные грейферы)
               li.gallery__catitem
-                a(href="#", data-tab="3").gallery__catitem-href Лесозаготовка (Грейферы для бревен)
+                a(href="#", data-tab="3").gallery__catitem-href.js-gallery-item Лесозаготовка (Грейферы для бревен)
               li.gallery__catitem
-                a(href="#", data-tab="4").gallery__catitem-href Для демонтажа и разбора завалов
+                a(href="#", data-tab="4").gallery__catitem-href.js-gallery-item Для демонтажа и разбора завалов
               li.gallery__catitem
-                a(href="#", data-tab="5").gallery__catitem-href Сельское хозяйство (Вилочные грейферы)
+                a(href="#", data-tab="5").gallery__catitem-href.js-gallery-item Сельское хозяйство (Вилочные грейферы)
               li.gallery__catitem
-                a(href="#", data-tab="6").gallery__catitem-href Для манипуляторов и КМУ
+                a(href="#", data-tab="6").gallery__catitem-href.js-gallery-item Для манипуляторов и КМУ
               li.gallery__catitem
-                a(href="#", data-tab="7").gallery__catitem-href Электрогидравлические грейферы
+                a(href="#", data-tab="7").gallery__catitem-href.js-gallery-item Электрогидравлические грейферы
         .gallery__photos
-          .gallery__photos-tab(data-tab="1")
-          .gallery__photo-col
-            .gallery__photo-elem
-              img(src="img/gallery1.jpg")
-            .gallery__photo-elem
-              img(src="img/gallery2.jpg")
-          .gallery__photo-col.gallery__photo-col_wide
-            .gallery__photo-elem
-              img(src="img/gallery3.jpg")
-            .gallery__photo-elem
-              img(src="img/gallery4.jpg")
+          .gallery__photos-tab.active.js-gallery-tab(data-tab="1")
+            .gallery__photo-col
+              .gallery__photo-elem
+                img(src="img/gallery1.jpg")
+              .gallery__photo-elem
+                img(src="img/gallery2.jpg")
+            .gallery__photo-col.gallery__photo-col_wide
+              .gallery__photo-elem
+                img(src="img/gallery3.jpg")
+              .gallery__photo-elem
+                img(src="img/gallery4.jpg")
+          .gallery__photos-tab.js-gallery-tab(data-tab="2")
+            .gallery__photo-col
+              .gallery__photo-elem
+                img(src="img/gallery1.jpg")
+            .gallery__photo-col.gallery__photo-col_wide
+              .gallery__photo-elem
+                img(src="img/gallery3.jpg")
+          .gallery__photos-tab.js-gallery-tab(data-tab="3")
+            .gallery__photo-col
+              .gallery__photo-elem
+                img(src="img/gallery2.jpg")
+            .gallery__photo-col.gallery__photo-col_wide
+              .gallery__photo-elem
+                img(src="img/gallery4.jpg")
+          .gallery__photos-tab.js-gallery-tab(data-tab="4")
+            .gallery__photo-col
+              .gallery__photo-elem
+                img(src="img/gallery4.jpg")
+          .gallery__photos-tab.js-gallery-tab(data-tab="5")
+            .gallery__photo-col
+              .gallery__photo-elem
+                img(src="img/gallery2.jpg")
+            .gallery__photo-col.gallery__photo-col_wide
+              .gallery__photo-elem
+                img(src="img/gallery4.jpg")
+          .gallery__photos-tab.js-gallery-tab(data-tab="6")
+            .gallery__photo-col
+              .gallery__photo-elem
+                img(src="img/gallery2.jpg")
+            .gallery__photo-col.gallery__photo-col_wide
+              .gallery__photo-elem
+                img(src="img/gallery4.jpg")
+          .gallery__photos-tab.js-gallery-tab(data-tab="7")
+            .gallery__photo-col
+              .gallery__photo-elem
+                img(src="img/gallery2.jpg")
+            .gallery__photo-col.gallery__photo-col_wide
+             .gallery__photo-elem
+                img(src="img/gallery4.jpg")
       section.help
         h3.help__title Поможем с выбором
         p.help__subtitle Оставьте заявку, мы свяжемся с Вами в ближайшее время. Для наиболее правильного подбора необходимого грузозахватного оборудования просим ответить на вопросы *
         form.help__form
-          .common__col
-            .common__row
-              label.common__label Состав заявки
-              textarea.common__textarea
-            .common__row
-              p.help__hint * – Укажите модель подходящего грейфера, или, если вы еще не определились, по возможности напишите: тип грейфера (двухчелюстной – с зубом/без, или многочелюстной – тип лепестка:  S, SL, P, PA), перегружаемый материал  (удельный вес),  для какой модели техники, максимально допустимый вес грейфера с грузом, для электрогидравлических  укажите грузоподъемность крана.
-          .common__col
-            .common__row
-              .common__col
-                label.common__label Ваше имя*
-                input(type="text", data-req="req").common__inp
-              .common__col
-                label.common__label Телефон*
-                input(type="text", data-req="req").common__inp.js-phone
-            .common__row
-              label.common__label Электронная почта
-              input(type="text", data-req="req", data-type="email").common__inp
-            .common__row
-              .common__col
-                .common__fileover
-                  input(type="file", name="", data-req="req", data-type="file").common__file#file1.js-common-fileinput
-                  label(for="file1", data-default="Прикрепить файл").common__filename.js-common-file Прикрепить файл
-                  button(type="button").common__filedelete.js-common-filedelete
-              .common__col
-                .fakecheckbox
-                  input(type="checkbox", value="", name="agreement", checked)#agreement.fakecheckbox__truecheck
-                  label(for="agreement").fakecheckbox__label Даю согласие на обработку 
-                    a(href="#") персональных данных
-          button(type="submit").btn.btn_red.help__btn Отправить
+          .common__row.common__row_flex
+            .common__col
+              .common__row
+                label.common__label Состав заявки
+                textarea.common__textarea
+                p.help__hint * – Укажите модель подходящего грейфера, или, если вы еще не определились, по возможности напишите: тип грейфера (двухчелюстной – с зубом/без, или многочелюстной – тип лепестка:  S, SL, P, PA), перегружаемый материал  (удельный вес),  для какой модели техники, максимально допустимый вес грейфера с грузом, для электрогидравлических  укажите грузоподъемность крана.
+            .common__col
+              .common__row.common__row_flex
+                .common__col
+                  label.common__label Ваше имя*
+                  input(type="text", data-req="req").common__inp
+                .common__col
+                  label.common__label Телефон*
+                  input(type="text", data-req="req").common__inp.js-phone
+              .common__row
+                label.common__label Электронная почта
+                input(type="text").common__inp
+              .common__row.common__row_flex
+                .common__col
+                  .common__fileover
+                    input(type="file", name="").common__file#file1.js-common-fileinput
+                    label(for="file1", data-default="Прикрепить файл").common__filename.js-common-file Прикрепить файл
+                    button(type="button").common__filedelete.js-common-filedelete
+                .common__col
+                  .fakecheckbox
+                    input(type="checkbox", value="", name="agreement", checked)#agreement.fakecheckbox__truecheck
+                    label(for="agreement").fakecheckbox__label Даю согласие на обработку 
+                      a(href="#") персональных данных
+          button(type="submit").btn.btn_red.btn_small.help__btn Отправить
       section.about
         aside.about__side
           span.about__smalltitle О компании
-          h3.about__title «Евраз-Трейд» – официальный поставщик грейферов Rozzi в России и СНГ
+          h3.about__title «Евраз-Трейд» – официальный поставщик грейферов Rozzi в&nbsp;России и СНГ
           .about__text
             p С нами выгодно!
             p Наша компания более 17 лет успешно поставляет импортное оборудование различных брендов, узлы, агрегаты, запчасти, расходные материалы к различным видам импортной спецтехнике и для различного технологического оборудования.
@@ -184,8 +230,8 @@ html
               span.about__digit 50
               p.about__digit-for поставленных грейферных захватов за 5 лет
       section.capabilities
-        span.capabilities-img.js-scroll-imgover
-        aside.capabilities-info
+        span.capabilities__img.js-scroll-imgover
+        aside.capabilities__info
           p.capabilities__title Наши возможности
           ol.capabilities__list
             li.capabilities__item
@@ -200,13 +246,13 @@ html
       section.ourfeat
         p.ourfeat__title Наши преимущества
         ul.ourfeat__list
-          li.ourfeat__item
+          li(data-koef=".12").ourfeat__item.js-ourfeat-item
             p.ourfeat__item-title Прямые поставки от производителя
             p.ourfeat__item-text Осуществляем прямые поставки с завода-изготовителя в Италии, индивидуально прорабатывая маршрут и транспортную логистику под каждую новую перевозку, что позволяет найти наиболее надежные и менее затратные варианты.
-          li.ourfeat__item
+          li(data-koef="-.2").ourfeat__item.js-ourfeat-item
             p.ourfeat__item-title Таможенное сопровождение сделки
             p.ourfeat__item-text Полностью берем на себя все мероприятия по оформлению импортной продукции и подаче таможенных деклараций на таможенные посты Челябинска, либо на таможенные посты по месту нахождения заказчика, что позволяет полностью контролировать правильность расчета и уплаты всех необходимых таможенных платежей и пошлин.
-          li.ourfeat__item
+          li(data-koef="-.05").ourfeat__item.js-ourfeat-item
             p.ourfeat__item-title Доставка по всей территории РФ и&nbsp;странам СНГ
             p.ourfeat__item-text Доставка товара до заказчика осуществляется, любым удобным для него способом по договоренности, в пределах нашего региона мы бесплатно доставим груз на любой склад транспортной компании для дальнейшей межтерминальной перевозки или доставим груз до «дверей» в Вашем городе за умеренную плату.
       section.clients
@@ -225,43 +271,50 @@ html
               img(src="img/clients5.png").clients__img
             .swiper-slide
               img(src="img/clients6.png").clients__img
-          .swiper-button-prev
-          .swiper-button-next
+            .swiper-slide
+              img(src="img/clients3.png").clients__img
+            .swiper-slide
+              img(src="img/clients4.png").clients__img
+        .swiper-buttons
+          .swiper-button-prev.swiper-button-prev_dark
+          .swiper-button-next.swiper-button-next_dark
       section.contacts
-        .common__col
-          p.contacts__title Контакты
-          .contacts-type
-            p.contacts__type-title Адрес
-            p.contacts__type-text 454007, город Челябинск, улица Савина, дом 8а, офис 2
-          .contacts-type
-            p.contacts__type-title Телефоны
-            .contacts__type-phones
-              a(href="tel:+73512430425").contacts__type-phone +7 (351) 243-04-25
-              a(href="tel:+73512432112").contacts__type-phone +7 (351) 243-21-12
-          .contacts-type
-            p.contacts__type-title Электронная почта
-            a(href="mailto:et74@bk.ru").contacts__type-mail et74@bk.ru
-        .common__col
-          p.contacts__title Связаться с нами
-          form.contacts__form
-            .common__row
-              label.common__label Текст сообщения
-              textarea.common__textarea
-            .common__row
-              .common__col
-                label.common__label Ваше имя*
-                input(type="text", data-req="req").common__inp
-              .common__col
-                label.common__label Телефон*
-                input(type="text", data-req="req").common__inp.js-phone
-            .common__row
-              label.common__label Электронная почта
-              input(type="text", data-req="req", data-type="email").common__inp
-            .common__row
-              .fakecheckbox
-                input(type="checkbox", value="", name="agreement", checked)#agreement1.fakecheckbox__truecheck
-                label(for="agreement1").fakecheckbox__label Даю согласие на обработку 
-                  a(href="#") персональных данных
-            button(type="submit").btn.btn_red.help__btn Отправить  
+        .common__row.common__row_flex
+          .common__col
+            p.contacts__title Контакты
+            .contacts__types
+              .contacts__type
+                p.contacts__type-title Адрес
+                p.contacts__type-text 454007, город Челябинск, улица Савина, дом 8а, офис 2
+              .contacts__type
+                p.contacts__type-title Телефоны
+                .contacts__type-phones
+                  a(href="tel:+73512430425").contacts__type-phone +7 (351) 243-04-25
+                  a(href="tel:+73512432112").contacts__type-phone +7 (351) 243-21-12
+              .contacts__type
+                p.contacts__type-title Электронная почта
+                a(href="mailto:et74@bk.ru").contacts__type-mail et74@bk.ru
+          .common__col
+            p.contacts__title Связаться с нами
+            form.contacts__form
+              .common__row
+                label.common__label Текст сообщения
+                textarea.common__textarea
+              .common__row.common__row_flex
+                .common__col
+                  label.common__label Ваше имя*
+                  input(type="text", data-req="req").common__inp
+                .common__col
+                  label.common__label Телефон*
+                  input(type="text", data-req="req").common__inp.js-phone
+              .common__row
+                label.common__label Электронная почта
+                input(type="text", data-req="req", data-type="email").common__inp
+              .common__row
+                .fakecheckbox
+                  input(type="checkbox", value="", name="agreement", checked)#agreement1.fakecheckbox__truecheck
+                  label(for="agreement1").fakecheckbox__label Даю согласие на обработку 
+                    a(href="#") персональных данных
+              button(type="submit").btn.btn_red.btn_small.contacts__btn Отправить  
     include layout/__footer
     include layout/__scripts
