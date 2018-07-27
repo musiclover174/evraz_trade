@@ -106,10 +106,10 @@
               <div class="swiper-slide"><img class="special__img" src="img/spec1.png"><span class="special__hint" data-text="Форма лепестков сконструирована таким образом, чтобы захватывать, как можно больше материала, при этом обеспечивая надежность захвата." style="top: 303px; left: 53px">+</span><span class="special__hint" data-text="Какой-то другой супер-текст, чтобы показать, что это вообще возможно, а не какие-то выдумки, йолы-палы" style="top: 153px; left: 283px">+</span></div>
               <div class="swiper-slide"><img class="special__img" src="img/spec1.png"><span class="special__hint" data-text="Форма лепестков сконструирована таким образом, чтобы захватывать, как можно больше материала, при этом обеспечивая надежность захвата." style="top: 303px; left: 53px">+</span></div>
             </div>
-            <div class="swiper-buttons">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-            </div>
+          </div>
+          <div class="swiper-buttons">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
       </section>
@@ -142,19 +142,19 @@
           <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
             <p class="catalog__item-name"> <span>Грейферы для разрушения и сортировки</span></p>
           </li>
-          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat2.jpg">
+          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item2" data-img="img/cat2.jpg">
             <p class="catalog__item-name"> <span>Грейферы для круглого леса и других материалов</span></p>
           </li>
           <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
             <p class="catalog__item-name"> <span>Двухчелюстной грейфер для сыпучих материалов</span></p>
           </li>
-          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat2.jpg">
+          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item2" data-img="img/cat2.jpg">
             <p class="catalog__item-name"> <span>Вилочные захваты для сельского хозяйства</span></p>
           </li>
           <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat1.jpg">
             <p class="catalog__item-name"> <span>Гидравлические ротаторы</span></p>
           </li>
-          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item" data-img="img/cat2.jpg">
+          <li class="catalog__item js-catalog-elem" data-fancybox data-src="#item2" data-img="img/cat2.jpg">
             <p class="catalog__item-name"> <span>Электрогидравлические грейферы</span></p>
           </li>
         </ul>
@@ -411,7 +411,7 @@
               </div>
               <div class="common__row">
                 <label class="common__label">Электронная почта</label>
-                <input class="common__inp" type="text" data-req="req" data-type="email">
+                <input class="common__inp" type="text">
               </div>
               <div class="common__row">
                 <div class="fakecheckbox">
@@ -431,8 +431,48 @@
       </aside><a class="footer__dextra" href="https://www.dextra.ru/" target="_blank"><span></span>Разработка<br>сайта</a>
     </footer>
     <div class="hidden-block">
-      <div class="popup" id="item">
-        <div class="popup-scrollable js-scrollable">
+      <div class="popup" id="text">
+        <p class="popup__title">Заголовок текстового попапа</p>
+        <p class="popup__subtitle"> Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.."</p>
+      </div>
+      <div class="popup popup_item" id="item2">
+        <div class="popup__scrollable js-scrollable">
+          <section class="card__over">
+            <aside class="card__imgover"><img class="card__img" src="img/card1.jpg"></aside>
+            <div class="card__info text">
+              <h3 class="card__title">Полип-грейферы Rozzi</h3>
+              <p>Грейферы гидравлические, многочелюстные применяются в качестве навесного грузозахватного оборудования на перегружателях, экскаваторах, манипуляторах, КМУ различных моделей и брендов. Могут поставляться отдельно, а так же в сборе с ротатором (для поворота на 360˚) и подвеской соответствующей размерам стрелы.</p>
+              <h3>Качество изделий</h3>
+              <p>Перед отправкой с завода Rozzi, все новое оборудование подлежит следующему контролю:</p>
+              <ul>
+                <li>проверка функционирования,</li>
+                <li>проверка точности размеров,</li>
+                <li>проверка качества сварных швов,</li>
+                <li>проверка всех уплотнений, соединений / уплотнения шлангов.</li>
+              </ul>
+              <div class="card__imgs">
+                <h3>Грейферы Rozzi в действии</h3>
+                <div class="card__car js-card-imgs swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="card__car-img" src="img/about.jpg"></div>
+                    <div class="swiper-slide"><img class="card__car-img" src="img/banner1.jpg"></div>
+                  </div>
+                </div>
+                <div class="swiper-buttons">
+                  <div class="swiper-button-prev swiper-button-prev_dark"></div>
+                  <div class="swiper-button-next swiper-button-next_dark"></div>
+                </div>
+              </div>
+              <div class="card__download">
+                <p class="card__download-type">PDF, 1.2 Мб</p><a class="card__download-href" href="#">Скачать каталог многочелюстных грейферов</a>
+                <button class="btn btn_red card__btn" type="button" data-fancybox data-src="#feedback">Оставить заявку</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="popup popup_item" id="item">
+        <div class="popup__scrollable js-scrollable">
           <section class="card__over">
             <aside class="card__imgover"><img class="card__img" src="img/card1.jpg"></aside>
             <div class="card__info text">
@@ -510,6 +550,7 @@
                 <div class="card__car js-card-imgs swiper-container">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide"><img class="card__car-img" src="img/about.jpg"></div>
+                    <div class="swiper-slide"><img class="card__car-img" src="img/banner1.jpg"></div>
                   </div>
                 </div>
                 <div class="swiper-buttons">

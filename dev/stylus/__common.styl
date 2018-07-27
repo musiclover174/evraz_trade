@@ -7,6 +7,12 @@ body
 
 .content
   padding 160px 65px 0
+  @media $minlDesktopMax
+    padding 160px 160px 0
+  @media $desktopMin
+    padding 160px 35px 0
+  @media $LandscapeMax
+    padding 130px 35px 0
   
 .content,
 .text
@@ -31,6 +37,8 @@ body
     pl 40px
     pos relative
     fontify 15px 400 21px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   ul:not([class]) li + li
     mt 18px
   ul:not([class]) li:before
@@ -48,6 +56,8 @@ body
     pl 30px
     pos relative
     fontify 15px 400 21px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   ol:not([class]) li + li
     mt 24px
   ol:not([class]) li:before
@@ -60,9 +70,13 @@ body
     pr 9px
     color $orange
     fontify 15px 400 21px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   p:not([class])
     fontify 15px 400 21px
     margin 18px 0
+    @media $LandscapeMax
+      fontify 14px 400 21px
   a:not([class])
     color black
     border-bottom 2px solid $orange
@@ -83,11 +97,15 @@ body
     color black
     fontify 15px 400 21px
     border-top 1px solid #e5e5e5
+    @media $LandscapeMax
+      fontify 14px 400 21px
   table td
     padding 19px 25px 14px
     color $dark
     fontify 15px 400 21px
     border-top 1px solid #e5e5e5
+    @media $LandscapeMax
+      fontify 14px 400 21px
   table tbody tr:last-child
     border-bottom 1px solid #e5e5e5
 
@@ -121,6 +139,10 @@ div[class\^="table-scroller"]
   background-repeat no-repeat
   background-position top left
   transition .7s background
+  @media $LandscapeMax
+    size 90px
+    padding 10px
+    fontify 14px 400 18px
   &:after
     content ""
     pos absolute
@@ -129,6 +151,8 @@ div[class\^="table-scroller"]
     b 30px
     background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAARCAMAAABgteXNAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAXVBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8/beDHAAAAHnRSTlMAqU8w5WIk3XYZ0YwBEMOfBAmzsaDB0L2NocIKshGrGyxnAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAFlJREFUKM+NkjcSgEAMA03mEhfI8f/PpKRi9lTveGRJIn8qSkFVdcNQ2/UMKW0sQm7wAaGYxohQmGaHkDWLkge14p1NK/KzH+TnTBf9dXM+GTln9JXT+7efF/fkBtgCWMQPAAAAAElFTkSuQmCC") no-repeat center
     transition .7s opacity, .7s left
+    @media $LandscapeMax
+      dn()
   &:hover
     background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgwAAAEZAQMAAADBu+/5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEX///////9VfPVsAAAAAXRSTlMD2e+J3AAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAoSURBVHja7cEBAQAAAIIg/69uSEABAAAAAAAAAAAAAAAAAAAAAADcGkmLAAHdDymqAAAAAElFTkSuQmCC")
     &:after
@@ -157,6 +181,8 @@ div[class\^="table-scroller"]
     font-family $os
     fontify 15px 400 21px
     transition .5s border
+    @media $LandscapeMax
+      fontify 14px 400 21px
   &__textarea
     w 100%
     h 92px
@@ -169,6 +195,8 @@ div[class\^="table-scroller"]
     font-family $os
     fontify 15px 400 21px
     transition .7s border
+    @media $LandscapeMax
+      fontify 14px 400 21px
   &__sbm
     font-family $os
     mt 5px
@@ -194,15 +222,13 @@ div[class\^="table-scroller"]
     white-space nowrap
     overflow hidden
     max-width 100%
-    @media $lDesktopSmall
-      fontify 12px 700 50px
     span
       fontify 23px 400 50px
       pos relative
       t 0
   &__col
     w calc(50% - 16px)
-    @media $LandscapeMedium
+    @media $LandscapeMax
       w 100%
       & + &
         mt 27px
@@ -212,6 +238,9 @@ div[class\^="table-scroller"]
       justify-content space-between
       pos relative
       w 100%
+      @media $LandscapeMax
+        flex-direction column
+        justify-content flex-start
     & + &
       mt 27px
   &__fileover
@@ -234,6 +263,9 @@ div[class\^="table-scroller"]
       fontify 15px 400 21px
       border-bottom 2px solid $orange
       transition .5s border
+      @media $LandscapeMax
+        fontify 14px 400 21px
+        l 33px
       &.choosed,
       &:hover
         border-color transparent
@@ -244,6 +276,8 @@ div[class\^="table-scroller"]
         t 0
         size 24px 23px
         background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAXCAMAAAAm/38fAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABL1BMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+TyruBAAAAZHRSTlMAEy4XeNXRdyiW7mk4Y+SLwY3yMGDcFoE2h/Ec3/MrdEniGypy7QISjwumB9u4BM6+z7vsy8i89S1zA8L5L8q6EOs6vW9FU+UpWR3TVs25gsDQjBgBoZmKBtQ96YTvbiFYetZMI7yxYQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAEBSURBVCjPY2DAAIxMzAzYAAsrKxs7uiAHAwMnFzcPLx8Lqji/AIOgkDCQISIqhiwuLiQhKQUSZ5CWkUAWl5WT5wKLMygoKiGrV1ZRBYmrMagraqCqB4lrailp6+giiyuDxfX0DZQMjVDMkTcGiZsYiZmaIYvLgcXVTMwYBZDVm1tYgsyxAopbI4vb2PIa2wLNsQOqt0cST5FwcHQCme+MYo5LiiuDmztI3EwdWdxD1ZOBwcub08fXD0WcwT8ARDoZBAYFCxiFIEmEhoEpKyugF5DFGcKh3o+IRDYHCKKiXUFUsA6aOANDTGxcPHOCjC4DBkiMjDRJCsIW/czJCl4YggDELiK7BTHsCwAAAABJRU5ErkJggg==") no-repeat center
+        @media $LandscapeMax
+          l -33px
       &.choosed + ^[-1]delete
         visibility visible
         cursor pointer
@@ -268,6 +302,8 @@ div[class\^="table-scroller"]
     pos relative
     pl 33px
     pt 7px
+    @media $LandscapeMax
+      fontify 14px 400 21px
     &:before 
       content ""
       pos absolute

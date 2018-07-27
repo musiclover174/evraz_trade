@@ -5,6 +5,8 @@
   display flex
   justify-content space-between
   align-items center
+  @media $desktopMin
+    padding 0 35px
   &__left
     display flex
     align-items center
@@ -13,9 +15,13 @@
     mr 31px
   &__logo
     filter invert(100%)
+    @media $PortraitMin
+      w 55px
   &__copy
     ib()
     fontify 15px 600 21px
+    @media $PortraitMax
+      dn()
   &__dextra
     color black
     font-family Verdana, Geneva, sans-serif
@@ -42,16 +48,36 @@
   w calc(100% - 200px)
   bgc $grey
   padding 58px 147px 59px 63px
+  @media $desktopMin
+    padding 41px 147px 41px 47px
+  @media $LandscapeMax
+    w calc(100% - 70px)
+  @media $LandscapeMin
+    padding 41px 47px
+  @media $PortraitMedium
+    w 100%
+    padding 35px
   &__title
     color black
     font-family $officina
     fontify 48px 400 52px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__subtitle
     color black
     mt 32px
     max-width 630px
     fontify 15px 400 21px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   &__form
+    @media $lDesktopSmall
+      & > .common__row_flex
+        flex-direction column
+      & > .common__row_flex > .common__col
+        w 100%
+        & + .common__col
+          mt 27px
     &_top
       mt 40px
     .common__label
@@ -71,26 +97,51 @@
       filter invert(100%)
     .fakecheckbox__label:before
       border-color black
-  &#item
-    //max-height 70vh
-    overflow auto
+  &_item
     padding 0
     bgc transparent
+  &__scrollable
+    height 70vh
+    overflow auto
 
 .card
   &__over
     display flex
+    pr 20px
+    @media $desktopMedium
+      flex-direction column
+    @media $PortraitMedium
+      padding 0 35px
   &__imgover
     w 368px
     mr 59px
+    @media $lDesktopSmall
+      w 270px
+      mr 40px
+    @media $desktopMedium
+      w 100%
+      mr 0
+      mb 40px
+  &__img
+    w 100%
+    @media $desktopMedium
+      max-width 100%
+      w auto
   &__info
     flex-grow 1
     mt -8px
     max-width 698px
+    w calc(100% - 427px)
+    @media $lDesktopSmall
+      w calc(100% - 310px)
+    @media $desktopMedium
+      w 100%
   &__title
     font-family $officina
     fontify 48px 400 52px
     mb 32px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__download
     mt 22px
     pos relative
@@ -103,6 +154,14 @@
     flex-direction column
     justify-content center
     align-items flex-start
+    @media $LandscapeMedium
+      pl 30px
+      w 100%
+      mr 0
+      h auto
+      padding 35px
+    @media $PortraitMax
+      db()
     &:before
       content ""
       pos absolute
@@ -127,6 +186,10 @@
     t 50%
     r -35px
     mt -58px
+    @media $LandscapeMedium
+      pos static
+      mt 20px
+      db()
   &__examples
     mt 46px
     display flex
@@ -136,10 +199,33 @@
   &__example
     w calc(50% - 16px)
     mb 34px
+    @media $LandscapeMin
+      w 100%
     &-img
       w 100%
     &-name
       fontify 15px 400 21px
       mt 10px
+      @media $LandscapeMax
+        fontify 14px 400 21px
   &__imgs
+    pos relative
     mt 69px
+    .swiper-buttons
+      pos absolute
+      r 0
+      t 3px
+      @media $PortraitMax
+        r auto
+        l 50%
+        t 0
+        pos relative
+        mt 30px
+        w 102px
+        ml -51px
+        mb 40px
+  &__car
+    &.swiper-container
+      mt 30px
+    &-img
+      w 100%

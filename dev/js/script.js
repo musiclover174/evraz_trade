@@ -234,15 +234,16 @@
           crossFade: true
         },
         navigation: {
-          nextEl: '.js-special .swiper-button-next',
-          prevEl: '.js-special .swiper-button-prev',
+          nextEl: '.js-special ~ .swiper-buttons .swiper-button-next',
+          prevEl: '.js-special ~ .swiper-buttons .swiper-button-prev',
         }
       })
     },
     
     gallery: () => {
       const galTabs = document.querySelectorAll('.js-gallery-tab'),
-            galItems = document.querySelectorAll('.js-gallery-item')
+            galItems = document.querySelectorAll('.js-gallery-item'),
+            headerEl = document.querySelector('.header')
             
       let sidebar
       
@@ -250,7 +251,7 @@
         sidebar = new StickySidebar('.js-gallery-sticky',{
           containerSelector: '.gallery',
           innerWrapperSelector: '.gallery__side-sticky',
-          topSpacing: 20,
+          topSpacing: 10 + headerEl.offsetHeight,
           bottomSpacing: 0
         });
       }
@@ -316,12 +317,22 @@
         },
         autoplay: {
           delay: 5000
-        }
-        /*breakpoints: {
+        },
+        on: {
+          init: function () {
+            const shaveElems = document.querySelectorAll('.js-banner .swiper-slide-duplicate .js-shave')
+            
+            for (let shaveElem of shaveElems) {
+              let shaveHeight = shaveElem.getAttribute('data-height')
+              shave(shaveElem, shaveHeight)
+            }
+          },
+        },
+        breakpoints: {
           960: {
             autoHeight: true
           }
-        }*/
+        }
       })
     },
     
@@ -353,6 +364,14 @@
         navigation: {
           nextEl: '.js-clients ~ .swiper-buttons .swiper-button-next',
           prevEl: '.js-clients ~ .swiper-buttons .swiper-button-prev',
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 4
+          },
+          900: {
+            slidesPerView: 2
+          }
         }
       })
     },
@@ -431,7 +450,39 @@
         shave(shaveElem, shaveHeight)
       }
 			
-      $('[data-fancybox]').fancybox({
+      $('.js-catalog-elem').fancybox({
+        touch: false,
+        i18n: {
+          en: {
+            CLOSE: "Закрыть"
+          }
+        },
+        afterShow: function( instance, current ) {
+          const car = instance.current.$content[0].querySelector('.js-card-imgs'),
+                scrollable = instance.current.$content[0].querySelector('.js-scrollable'),
+                btnPrev = instance.current.$content[0].querySelector('.swiper-button-prev'),
+                btnNext = instance.current.$content[0].querySelector('.swiper-button-next')
+
+          new PerfectScrollbar(scrollable, {
+            wheelPropagation: true,
+            suppressScrollX: false
+          })
+          
+          new Swiper (car, {
+            loop: false,
+            speed: 800,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            autoHeight: true,
+            navigation: {
+              nextEl: btnNext,
+              prevEl: btnPrev,
+            }
+          })
+        }
+      })
+      
+      $('[data-fancybox]:not(.js-catalog-elem)').fancybox({
         i18n: {
           en: {
             CLOSE: "Закрыть"

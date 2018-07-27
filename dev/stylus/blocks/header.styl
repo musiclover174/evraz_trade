@@ -5,6 +5,17 @@
   l 0
   padding 22px 65px 0
   z-index 1
+  @media $desktopMin
+    pos fixed
+    z-index 11
+    h 116px
+    bgc white
+    pt 0
+    t 0
+    box-shadow 2.5px 4.3px 35px rgba(0, 0, 0, 0.25)
+    padding 0 35px 0
+  @media $LandscapeMax
+    h 90px
   &:before
     content ""
     pos absolute
@@ -16,47 +27,105 @@
     background-image url('../i/btn-bg.png')
     background-repeat no-repeat
     background-blend-mode soft-light
+    @media $minlDesktopMedium
+      size 650px 350px
+      background-size cover
+    @media $minlDesktopMax
+      size 784px 420px
+      background-size cover
     background-position top left
+    @media $desktopMin
+      dn()
   &__feedback
     float right
     mr -65px
+    @media $desktopMin
+      mr -35px
   &__info
     float right
     mr 29px
     mt 22px
     text-align right
+    @media $lDesktopSmall
+      mt 26px
+    @media $desktopMin
+      mr 20px
+    @media $LandscapeMax
+      mt 13px
+    @media $PortraitMedium
+      mr 15px
+    @media $PortraitMin
+      dn()
     &-phone
       color black
       fontify 21px 600 24px
+      @media $lDesktopSmall
+        fontify 15px 600 21px
     &-days
       db()
       mt 10px
       color black
       fontify 12px 600 18px
+      @media $lDesktopSmall
+        mt 6px
+      @media $desktopMin
+        fontify 11px 400 18px
   &__logo
     ib()
     mt 29px
     mr 30px
+    @media $lDesktopSmall
+      mr 20px
+    @media $LandscapeMax
+      mt 16px
+    @media $PortraitMin
+      mt 23px
+    &-img
+      @media $desktopMin
+        filter invert(100%)
+      @media $PortraitMin
+        w 55px
     &-hint
       ib()
       mt 38px
       color white
       fontify 15px 600 21px
       max-width 240px
+      @media $lDesktopSmall
+        fontify 14px 400 21px
+      @media $desktopMedium
+        dn()
   &__menu
     float right
     mr 55px
     mt 54px
+    @media $minlDesktopMedium
+      mr 120px
+    @media $minlDesktopMax
+      mr 230px
+    @media $lDesktopSmall
+      mr 35px
+      mt 50px
+    @media $desktopMin
+      mr 25px
+    @media $LandscapeMax
+      dn()
     &-list
       display flex
     &-item
       & + &
         ml 27px
+        @media $lDesktopSmall
+          ml 17px
+        @media $desktopMin
+          ml 12px
     &-href
       color black
       fontify 17px 600 20px
       pos relative
       transition .7s color
+      @media $lDesktopSmall
+        fontify 15px 600 21px
       &:after
         content ""
         pos absolute
@@ -75,6 +144,9 @@
     pos fixed
     t -140px
     box-shadow none
+    @media $desktopMin
+      t 0
+      box-shadow 2.5px 4.3px 35px rgba(0, 0, 0, 0.25)
     &:before
       dn()
   &.fixed
@@ -85,6 +157,8 @@
     t 0
     box-shadow 2.5px 4.3px 35px rgba(0, 0, 0, 0.25)
     transition 1.2s top, .7s box-shadow .2s
+    @media $LandscapeMax
+      h 90px
     &:before
       dn()
     & ^[0]
@@ -96,13 +170,25 @@
       &__info
         mt 26px
         mr 30px
+        @media $desktopMin
+          mr 20px
+        @media $LandscapeMax
+          mt 13px
+        @media $PortraitMedium
+          mr 15px
         &-phone
           fontify 15px 600 21px
         &-days
           mt 6px
+          @media $desktopMin
+            fontify 11px 400 18px
       &__menu
         mr 128px
         mt 50px
+        @media $lDesktopSmall
+          mr 35px
+        @media $desktopMin
+          mr 25px
         &-href
           fontify 15px 600 21px
 .burger

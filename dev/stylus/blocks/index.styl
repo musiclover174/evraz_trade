@@ -1,18 +1,32 @@
 .banner
   pos relative
+  @media $PortraitMax
+    ml -35px
+    w calc(100% + 70px)
   .swiper-buttons
     pos absolute
     z-index 1
     r 228px
     t 65px
+    @media $minlDesktopMedium
+      r 285px
+    @media $minlDesktopMax
+      r 345px
+    @media $desktopMin
+      r auto
+      l 35px
+      t 35px
   .swiper-slide
     overflow hidden
     h 560px
+    @media $desktopMin
+      h auto
     &-active
       & ^[0]__img
         transform scale(1.02)
   &__img
     pos absolute
+    min-width 100%
     l 0
     t 0
     will-change transform
@@ -27,21 +41,48 @@
     bgc $grey
     w 393px
     padding 134px 64px 0
+    @media $minlDesktopMedium
+      w 450px
+    @media $minlDesktopMax
+      w 510px
+    @media $desktopMin
+      w 100%
+      bgc alpha($grey, .75)
+      padding 100px 35px 124px
+      h auto
+      pos relative
+    @media $LandscapeMax
+      padding 100px 35px 95px
   &__title
     font-family $officina
     fontify 48px 400 52px
     mb 33px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__text
     fontify 15px 400 21px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   &__btn
     pos absolute
     r 213px
     b -38px
     z-index 1
+    @media $minlDesktopMedium
+      r 268px
+    @media $minlDesktopMax
+      r 329px
+    @media $desktopMin
+      r auto
+      l 35px
 
 .special
   mt 231px
   padding 0 35px
+  @media $desktopMedium
+    mt 150px
+  @media $desktopMin
+    padding 0
   &__count
     float right
     font-family $officina
@@ -49,20 +90,38 @@
     max-width 250px
     text-align right
     mt 5px
+    @media $lDesktopSmall
+      dn()
   &__title
     font-family $officina
     fontify 48px 400 52px
     max-width 500px
     mb 32px
+    @media $desktopMin
+      max-width 650px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__subtitle
     fontify 15px 400 21px
     max-width 470px
+    @media $lDesktopSmall
+      max-width 370px
+    @media $desktopMin
+      max-width 650px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   &__bottom
     mt 75px
     h 140px
     pos relative
     display flex
     z-index 1
+    justify-content space-between
+    @media $lDesktopSmall
+      h 220px
+    @media $desktopMin
+      mt 45px
+      h auto
     &:before
       content ""
       bgc $orange
@@ -72,18 +131,57 @@
       t 0
       h 100%
       w calc(100% + 100px)
+      @media $minlDesktopMax
+        w calc(100% + 195px)
+      @media $desktopMin
+        w calc(100% + 35px)
+      @media $PortraitMax
+        ml -35px
+        w calc(100% + 70px)
   &__links
     display flex
     h 100%
     align-items center
     pl 40px
+    @media $lDesktopSmall
+      flex-direction column
+      align-items flex-start
+      justify-content center
+    @media $desktopMin
+      flex-direction row
+      align-items flex-start
+      justify-content flex-start
+      padding 40px
+    @media $LandscapeMax
+      flex-direction column
+      align-items flex-start
+      justify-content center
+    @media $PortraitMax
+      padding 30px 0
   &__link
     max-width 170px
     pb 7px
+    @media $lDesktopSmall
+      max-width 250px
+    @media $desktopMin
+      max-width none
     &:first-child
       max-width 120px
+      @media $lDesktopSmall
+        max-width 250px
+      @media $desktopMin
+        max-width none
     & + &
       ml 34px
+      @media $lDesktopSmall
+        ml 0
+        mt 15px
+      @media $desktopMin
+        ml 34px
+        mt 0
+      @media $LandscapeMax
+        ml 0
+        mt 15px
     &-type
       color white
       fontify 12px 400 21px
@@ -98,14 +196,31 @@
   &__car
     size 570px 570px
     t 50%
+    @media $lDesktopSmall
+      w 530px
+    @media $desktopMin
+      dn()
     &.swiper-container
       mt -353px
-      ml 94px
+      mr 151px
+      ml 40px
       overflow visible
-    .swiper-buttons
+      @media $lDesktopSmall
+        mr 0
+    & + .swiper-buttons
       pos absolute
-      r -140px
-      t 340px
+      r 0
+      t 50%
+      mt -14px
+      @media $lDesktopSmall
+        t -323px
+        mt 0
+      @media $desktopMin
+        dn()
+      .swiper-button-prev,
+      .swiper-button-next
+        @media $lDesktopSmall
+          filter invert(100%)
   &__hint
     pos absolute
     bgc $dark
@@ -131,6 +246,8 @@
       opacity 0
       visibility hidden
       transition .7s opacity, .7s visibility, .7s bottom
+      @media $LandscapeMax
+        fontify 14px 400 21px
     &:hover:before
       visibility visible
       b 35px
@@ -142,6 +259,13 @@
   padding 0 35px
   pos relative
   z-index 1
+  @media $desktopMedium
+    mt 250px
+  @media $desktopMin
+    mt 155px
+    padding 0
+  @media $LandscapeMax
+    mt 100px
   &:before
     content ""
     pos absolute
@@ -151,24 +275,53 @@
     l 75px
     t 143px
     bgc $grey
+    @media $desktopMin
+      dn()
   &__content
     w 500px
+    @media $minlDesktopMedium
+      w 560px
+    @media $lDesktopSmall
+      w 420px
+    @media $desktopMin
+      w 600px
   &__title
     font-family $officina
     fontify 48px 400 52px
     mb 85px
+    @media $LandscapeMax
+      fontify 32px 400 42px
+    @media $desktopMin
+      mb 55px
+    @media $LandscapeMax
+      mb 35px
   &__list
     display flex
     flex-wrap wrap
     ml 26px
+    @media $lDesktopSmall
+      ml 0px
   &__item
     pl 30px
     fontify 15px 600 21px
     pos relative
     max-width 140px
     mb 38px
+    @media $desktopMin
+      w 240px
+      max-width none
+    @media $LandscapeMax
+      w 100%
+      pl 0
+      mb 18px
     & + &
       ml 112px
+      @media $lDesktopSmall
+        ml 80px
+      @media $desktopMin
+        ml 110px
+      @media $LandscapeMax
+        ml 0
     &:nth-child(2n - 3)
       ml 0
     &:before
@@ -177,6 +330,8 @@
       l 0
       t 0
       fontify 15px 600 21px
+      @media $LandscapeMax
+        dn()
     &:after
       content ""
       pos absolute
@@ -185,6 +340,8 @@
       w 1px
       h 30px
       bgc #e1e1e1
+      @media $desktopMin
+        dn()
   &__imgs
     pos relative
     z-index 1
@@ -193,13 +350,22 @@
     display flex
     align-content flex-end
     align-items flex-end
+    @media $minlDesktopMedium
+      h 710px
+    @media $desktopMin
+      dn()
   &__img
     &_img1
       background url('/img/feat2.png') no-repeat top left
       size 0 422px
       transition .7s width
+      @media $minlDesktopMedium
+        h 580px
+        background-size 386px 580px
       &.visible
         w 280px
+        @media $minlDesktopMedium
+          w 386px
     &_img2
       background url('/img/feat1.png') no-repeat top left
       size 0 730px
@@ -208,8 +374,21 @@
       l 213px
       t -160px
       transition .7s width
+      @media $minlDesktopMedium
+        l 244px
+        t -200px
+        h 860px
+        background-size 680px 860px
+      @media $desktopMedium
+        size 0 600px
+        l 103px
+        t -40px
       &.visible
         w 600px
+        @media $minlDesktopMedium
+          w 680px
+        @media $desktopMedium
+          w 493px
 
 .video
   mt 200px
@@ -220,6 +399,19 @@
   pos relative
   z-index 1
   background-size cover
+  @media $minlDesktopMax
+    w calc(100% + 320px)
+    ml -160px
+    max-height 800px
+  @media $desktopMin
+    max-height none
+    h auto
+    ml -35px
+    w calc(100% + 70px)
+    pt 60%
+    mt 155px
+  @media $LandscapeMax
+    mt 100px
   &__play
     pos absolute
     z-index 1
@@ -255,6 +447,10 @@
 .catalog
   mt 73px
   padding 0 35px
+  @media $desktopMin
+    padding 0
+  @media $LandscapeMax
+    mt 100px
   &__smalltitle
     db()
     color $orange
@@ -265,6 +461,8 @@
     color black
     font-family $officina
     fontify 48px 400 52px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__list
     display flex
     flex-wrap wrap
@@ -273,6 +471,14 @@
     w calc(100% + 200px)
     counter-reset catCounter
     transition .7s background
+    @media $minlDesktopMax
+      w calc(100% + 390px)
+      ml -195px
+    @media $desktopMin
+      background-size cover
+    @media $desktopMin
+      ml -35px
+      w calc(100% + 70px)
   &__item
     pos relative
     z-index 1
@@ -284,6 +490,17 @@
     padding 57px 43px 0 94px
     border-bottom 1px solid #404040
     border-right 1px solid #404040
+    @media $desktopMedium
+      padding 55px 43px
+      h 290px
+    @media $desktopMin
+      w 50%
+      h 170px
+      padding 30px 35px
+    @media $LandscapeMedium
+      w 100%
+      h auto
+      border-right 0
     span
       pos relative
       &:after
@@ -295,6 +512,8 @@
         background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAARCAMAAABgteXNAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAXVBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8/beDHAAAAHnRSTlMAqU8w5WIk3XYZ0YwBEMOfBAmzsaDB0L2NocIKshGrGyxnAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAFlJREFUKM+NkjcSgEAMA03mEhfI8f/PpKRi9lTveGRJIn8qSkFVdcNQ2/UMKW0sQm7wAaGYxohQmGaHkDWLkge14p1NK/KzH+TnTBf9dXM+GTln9JXT+7efF/fkBtgCWMQPAAAAAElFTkSuQmCC") no-repeat center
         opacity 0
         transition .7s left, .7s opacity
+        @media $LandscapeMedium
+          dn()
     &:hover 
       span:after
         l 0
@@ -305,6 +524,8 @@
       pos absolute
       l 62px
       t 57px
+      @media $desktopMedium
+        dn()
     &:after
       content ""
       pos absolute
@@ -320,10 +541,15 @@
     &:nth-child(3),
     &:last-child
       border-right 0
+      @media $desktopMin
+        border-right 1px solid #404040
     &_wide
       w 50%
       border-right 1px solid #404040
       border-bottom 1px solid #404040
+      @media $LandscapeMedium
+        w 100%
+        border-right 0
   &__official
     mt 200px
     display flex
@@ -331,9 +557,26 @@
     padding 0 35px
     pos relative
     z-index 1
+    @media $desktopMedium
+      flex-direction column
+    @media $desktopMin
+      mt 120px
+      padding 0
+    @media $LandscapeMax
+      mt 90px
     &-content
       w 495px
       padding 59px 0 59px 75px
+      @media $minlDesktopMax
+        w 600px
+      @media $lDesktopSmall
+        padding 39px 0 110px 45px
+        w 435px
+      @media $desktopMin
+        padding 39px 0 110px 0
+        w 100%
+      @media $PortraitMax
+        padding 0
       &:before
         content ""
         pos absolute
@@ -343,12 +586,24 @@
         h 100%
         w 60%
         bgc $grey
+        @media $desktopMedium
+          h 306px
+        @media $desktopMin
+          l -35px
+          w 100%
+        @media $PortraitMax
+          dn()
     &-title
       font-family $officina
       fontify 48px 400 52px
+      max-width 400px
+      @media $LandscapeMax
+        fontify 32px 400 42px
     &-subtitle
       fontify 15px 400 21px
       mt 32px
+      @media $LandscapeMax
+        fontify 14px 400 21px
     &-files
       min-height 166px
       w calc(100% - 495px)
@@ -357,10 +612,31 @@
       display flex
       align-items center
       padding 0 35px 0 65px
+      @media $lDesktopSmall
+        mt 48px
+        padding 0 35px
+        min-height 140px
+        w calc(100% - 435px)
+      @media $desktopMedium
+        w calc(100% - 35px)
+        ml 35px
+        mt -71px
+      @media $LandscapeMax
+        flex-direction column
+        align-items flex-start
+        justify-content center
+        padding 25px 35px
+      @media $PortraitMax
+        mt 30px
+        w calc(100% + 70px)
+        ml -35px
     &-file
       pb 7px
       & + &
         ml 36px
+        @media $LandscapeMax
+          ml 0
+          mt 15px
       &-info
         color white
         fontify 12px 400 21px
@@ -378,6 +654,16 @@
   display flex
   w calc(100% + 65px)
   pos relative
+  @media $minlDesktopMax
+    w calc(100% + 195px)
+  @media $desktopMin
+    w calc(100% + 35px)
+    mt 155px
+    padding 0
+  @media $LandscapeMax
+    mt 100px
+    flex-direction column
+    w 100%
   &:before
     content ""
     pos absolute
@@ -387,8 +673,25 @@
     h 720px
     w 90%
     bgc $grey
+    @media $desktopMin
+      dn()
   &__side
     w 297px
+    min-width 297px
+    @media $minlDesktopMedium
+      w 370px
+    @media $minlDesktopMax
+      w 430px
+    @media $desktopMedium
+      w 245px
+      min-width 245px
+    @media $LandscapeMax
+      w 100%
+      height auto !important
+    &-sticky
+      @media $LandscapeMax
+        position static !important
+        transform none !important
   &__smalltitle
     color $orange
     fontify 15px 600 21px
@@ -396,14 +699,21 @@
     mt 17px
     font-family $officina
     fontify 48px 400 52px
+    pr 20px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__catlist
     display flex
     flex-direction column
     mt 62px
     pr 55px
+    @media $LandscapeMax
+      mt 32px
   &__catitem
     & + &
       mt 19px
+      @media $LandscapeMax
+        mt 12px
     &-href
       color black
       fontify 15px 600 21px
@@ -414,6 +724,11 @@
   &__photos
     flex-grow 1
     mt 8px
+    @media $LandscapeMax
+      mt 40px
+    @media $LandscapeMax
+      w calc(100% + 70px)
+      ml -35px
     &-tab
       dn()
       &.active
@@ -424,11 +739,17 @@
       flex-direction column
       & + &
         ml 30px
+        @media $PortraitMedium
+          ml 15px
       &:first-child
-        w 300px
+        w 40%
         text-align right
+        @media $lDesktopSmall
+          w 300px
       &:last-child
         flex-grow 1
+      img
+        w 100%
     &-elem
       pos relative
       &:after
@@ -445,6 +766,8 @@
         opacity .75
       & + &
         mt 30px
+        @media $PortraitMedium
+          mt 15px
       img
         max-width 100%
 
@@ -454,40 +777,86 @@
   bgc $dark
   padding 58px 147px 59px 63px
   pos relative
+  @media $desktopMin
+    margin 140px 0 0
+    padding 41px 147px 41px 47px
+  @media $LandscapeMax
+    mt 100px
+  @media $LandscapeMin
+    padding 41px 47px
+  @media $PortraitMax
+    ml -35px
+    w calc(100% + 70px)
+    padding 35px
   &__title
     color white
     font-family $officina
     fontify 48px 400 52px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__subtitle
     mt 32px
     color white
     max-width 630px
     fontify 15px 400 21px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   &__form
     mt 40px
+    @media $lDesktopSmall
+      & > .common__row_flex
+        flex-direction column
+      & > .common__row_flex > .common__col
+        w 100%
+        & + .common__col
+          mt 27px
   &__hint
     color white
     fontify 15px 400 21px
     mt 7px
+    @media $LandscapeMax
+      fontify 14px 400 21px
   &__btn
     pos absolute
     b 35px
-    r -35px    
+    r -35px  
+    @media $desktopMin
+      r -21px
+    @media $LandscapeMin
+      pos static
+      mt 30px
 .about
   mt 260px
   padding 0 35px
   display flex
   pos relative
+  @media $desktopMin
+    flex-direction column
+    padding 0
+    mt 140px
+  @media $LandscapeMax
+    mt 100px
   &__side
     w 333px
     mr 90px
     pos relative
     z-index 1
+    @media $lDesktopSmall
+      w 280px
+    @media $desktopMin
+      w 100%
+      mr 0
   &__info
     flex-grow 1
     pos relative
     pt 527px
     pr 37px
+    @media $desktopMedium
+      pt 490px
+    @media $desktopMin
+      pt 0
+      pr 0
+      mt 50px
     &-img
       pos absolute
       l 0
@@ -495,8 +864,12 @@
       background url('/img/about.jpg') no-repeat top left
       size 0 506px
       transition .7s width
+      @media $desktopMin
+        dn()
       &.visible
-        w 843px
+        w calc(100vw - 540px)
+        @media $lDesktopSmall
+          w 830px
   &__smalltitle
     color $orange
     fontify 15px 600 21px
@@ -505,13 +878,21 @@
     font-family $officina
     fontify 48px 400 52px
     w 630px
+    @media $LandscapeMax
+      fontify 32px 400 42px
+      w 100%
   &__text
     mt 32px
   &__features
     display flex
     justify-content space-between
+    @media $desktopMedium
+      flex-wrap wrap
   &__feature
     w 120px
+    @media $desktopMedium
+      w 50%
+      mb 30px
   &__digit
     color $orange
     font-family $officina
@@ -528,6 +909,10 @@
   padding 58px 35px 66px 35px
   display flex
   justify-content flex-end
+  @media $desktopMin
+    justify-content flex-start
+    mt 150px
+    padding 42px 0 50px
   &:before
     content ""
     pos absolute
@@ -537,21 +922,51 @@
     bgc $orange
     h 100%
     w calc(100% + 65px)
+    @media $desktopMin
+      l -65px
+      w calc(100% + 130px)
+    @media $LandscapeMax
+      l -35px
+      w calc(100% + 70px)
   &__img
     pos absolute
-    l -65px
+    r 560px
     t -60px
     background url('/img/capabilites.jpg') no-repeat top left
     size 0 588px
     transition .7s width
+    @media $minlDesktopMedium
+      r 620px
+    @media $minlDesktopMax
+      r 690px
+    @media $desktopMedium
+      r 460px
+    @media $desktopMin
+      dn()
     &.visible
-      w 746px
+      w calc(100vw - 640px)
+      @media $minlDesktopMedium
+        w calc(100vw - 700px)
+      @media $minlDesktopMax
+        w calc(100vw - 770px)
+      @media $lDesktopSmall
+        w 746px
   &__info
     w 460px
+    @media $minlDesktopMedium
+      w 520px
+    @media $minlDesktopMax
+      w 590px
+    @media $desktopMedium
+      w 380px
+    @media $desktopMin
+      w 100%
   &__title
     color white
     font-family $officina
     fontify 48px 400 52px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__list
     mt 32px
     pl 60px
@@ -584,12 +999,20 @@
       color white
       fontify 15px 400 21px
       mt 18px
+      @media $LandscapeMax
+        fontify 14px 400 21px
 .ourfeat
   mt 192px
   pos relative
+  @media $desktopMin
+    mt 140px
+  @media $LandscapeMax
+    mt 100px
   &__title
     font-family $officina
     fontify 48px 400 52px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__list
     margin 105px 35px 0
     background url('/img/ourfeat.jpg') no-repeat top left
@@ -598,6 +1021,11 @@
     display flex
     justify-content space-between
     align-items flex-start
+    @media $desktopMin
+      flex-direction column
+      justify-content flex-start
+      margin 40px 0 0
+      background none
   &__item
     w calc(100% / 3)
     h 390px
@@ -605,16 +1033,37 @@
     bgc $grey
     padding 48px 64px
     transition .7s background
+    @media $lDesktopSmall
+      padding 38px 35px
+    @media $desktopMedium
+      h auto
+    @media $desktopMin
+      w 100%
+      top 0 !important
+    @media $PortraitMax
+      w calc(100% + 70px)
+      ml -35px
     & + &
       ml 33px
+      @media $desktopMin
+        ml 0
+        mt 30px
+      @media $PortraitMax
+        ml -35px
     &:first-child
       ml -35px
       t -65px
+      @media $desktopMin
+        ml 0
+      @media $PortraitMax
+        ml -35px
     &:nth-child(2)
       t 195px
     &:last-child
       mr -35px
       t 65px
+      @media $desktopMin
+        mr 0
     &-title
       fontify 15px 600 21px
       transition .7s color
@@ -622,6 +1071,8 @@
       mt 20px
       fontify 15px 400 21px
       transition .7s color
+      @media $LandscapeMax
+        fontify 14px 400 21px
     &:hover
       bgc $orange
       & ^[-1]-title,
@@ -630,10 +1081,20 @@
 .clients
   mt 255px
   pos relative
+  padding 0 35px
+  @media $desktopMedium
+    mt 150px
+  @media $LandscapeMax
+    mt 100px
+  @media $desktopMin
+    padding 0
   &__title
     font-family $officina
     fontify 48px 400 52px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__img
+    max-width 80%
     opacity .4
     transition .7s opacity
     &:hover
@@ -650,20 +1111,49 @@
     pos absolute
     r 35px
     t 10px
+    @media $PortraitMax
+      r auto
+      l 50%
+      t 0
+      pos relative
+      mt 30px
+      w 102px
+      ml -51px
 .contacts
   margin 193px 35px 0
   bgc $dark
   padding 58px 147px 69px 64px
   pos relative
+  @media $lDesktopSmall
+    & > .common__row_flex
+      flex-direction column
+    & > .common__row_flex > .common__col
+      w 100%
+      & + .common__col
+        mt 27px
+  @media $desktopMin
+    margin 140px 0 0
+    padding 41px 147px 41px 47px
+  @media $LandscapeMax
+    mt 100px
+  @media $LandscapeMin
+    padding 41px 47px
+  @media $PortraitMax
+    ml -35px
+    w calc(100% + 70px)
   &__title
     color white
     font-family $officina
     fontify 48px 400 52px
+    @media $LandscapeMax
+      fontify 32px 400 42px
   &__types
     mt 34px
   &__type
     pl 27px
     pos relative
+    @media $PortraitMax
+      pl 0
     &:before
       content ""
       pos absolute
@@ -672,6 +1162,8 @@
       bgc alpha(white, .1)
       h 30px
       w 1px
+      @media $PortraitMax
+        dn()
     & + &
       mt 39px
     &-title
@@ -681,14 +1173,24 @@
       mt 18px
       color white
       fontify 15px 400 21px
+      @media $LandscapeMax
+        fontify 14px 400 21px
     &-phones
       mt 18px
+      @media $PortraitMin
+        display flex
+        flex-direction column
     &-phone
       ib()
       color white
       fontify 15px 400 21px
+      @media $LandscapeMax
+        fontify 14px 400 21px
       & + &
         ml 30px
+        @media $PortraitMin
+          mt 10px
+          ml 0
     &-mail
       mt 18px
       ib()
@@ -696,6 +1198,8 @@
       fontify 15px 400 21px
       border-bottom 1px solid transparent
       transition .7s border
+      @media $LandscapeMax
+        fontify 14px 400 21px
       &:hover
         border-color currentColor
   &__form
@@ -704,3 +1208,9 @@
     pos absolute
     b -35px
     r -181px 
+    @media $desktopMin
+      b 0
+      r -168px
+    @media $LandscapeMin
+      pos static
+      mt 30px

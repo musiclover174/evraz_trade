@@ -8,8 +8,41 @@ footer.footer
     | Разработка<br>сайта
     
 .hidden-block
-  #item.popup
-    .popup-scrollable.js-scrollable
+  #text.popup
+    p.popup__title Заголовок текстового попапа
+    p.popup__subtitle  Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.."
+  #item2.popup.popup_item
+    .popup__scrollable.js-scrollable
+      section.card__over
+        aside.card__imgover
+          img(src="img/card1.jpg").card__img
+        .card__info.text
+          h3.card__title Полип-грейферы Rozzi
+          p Грейферы гидравлические, многочелюстные применяются в качестве навесного грузозахватного оборудования на перегружателях, экскаваторах, манипуляторах, КМУ различных моделей и брендов. Могут поставляться отдельно, а так же в сборе с ротатором (для поворота на 360˚) и подвеской соответствующей размерам стрелы.
+          h3 Качество изделий
+          p Перед отправкой с завода Rozzi, все новое оборудование подлежит следующему контролю:
+          ul
+            li проверка функционирования,
+            li проверка точности размеров,
+            li проверка качества сварных швов,
+            li проверка всех уплотнений, соединений / уплотнения шлангов.
+          .card__imgs
+            h3 Грейферы Rozzi в действии
+            .card__car.js-card-imgs.swiper-container
+              .swiper-wrapper
+                .swiper-slide
+                  img(src="img/about.jpg").card__car-img
+                .swiper-slide
+                  img(src="img/banner1.jpg").card__car-img
+            .swiper-buttons
+              .swiper-button-prev.swiper-button-prev_dark
+              .swiper-button-next.swiper-button-next_dark
+          .card__download
+            p.card__download-type PDF, 1.2 Мб
+            a(href="#").card__download-href Скачать каталог многочелюстных грейферов
+            button(type="button", data-fancybox, data-src="#feedback").btn.btn_red.card__btn Оставить заявку
+  #item.popup.popup_item
+    .popup__scrollable.js-scrollable
       section.card__over
         aside.card__imgover
           img(src="img/card1.jpg").card__img
@@ -78,6 +111,8 @@ footer.footer
               .swiper-wrapper
                 .swiper-slide
                   img(src="img/about.jpg").card__car-img
+                .swiper-slide
+                  img(src="img/banner1.jpg").card__car-img
             .swiper-buttons
               .swiper-button-prev.swiper-button-prev_dark
               .swiper-button-next.swiper-button-next_dark
